@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍁 越後湯澤 × 富士山 紅葉之旅 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a0e08;
+  --red: #b02a1a;
+  --deep-red: #7a1810;
+  --orange: #d4601a;
+  --amber: #c8860a;
+  --gold: #e8b84b;
+  --cream: #faf4e8;
+  --paper: #f5ead6;
+  --warm-white: #fdf8f0;
+  --mid: #8b5e3c;
+  --border: #dfc89a;
+  --blue: #1a3f6b;
+  --light-blue: #e8f0f8;
+  --green: #2d6040;
+  --yellow-bg: #fef9e7;
+  --red-bg: #fce8e5;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: var(--ink);
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 80%, #6b1a0a55 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%, #3d0f0555 0%, transparent 60%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, #2a0f0299 0%, #0a0502 100%);
+}
+
+/* Falling leaves animation */
+.leaf {
+  position: absolute;
+  font-size: 28px;
+  opacity: 0;
+  animation: fall linear infinite;
+  pointer-events: none;
+}
+.leaf:nth-child(1)  { left: 8%;  animation-delay: 0s;    animation-duration: 8s;  font-size: 22px; }
+.leaf:nth-child(2)  { left: 18%; animation-delay: 1.5s;  animation-duration: 10s; }
+.leaf:nth-child(3)  { left: 32%; animation-delay: 0.8s;  animation-duration: 7s;  font-size: 18px; }
+.leaf:nth-child(4)  { left: 48%; animation-delay: 2.2s;  animation-duration: 9s; }
+.leaf:nth-child(5)  { left: 62%; animation-delay: 0.3s;  animation-duration: 11s; font-size: 24px; }
+.leaf:nth-child(6)  { left: 75%; animation-delay: 1.8s;  animation-duration: 8s;  font-size: 20px; }
+.leaf:nth-child(7)  { left: 88%; animation-delay: 0.6s;  animation-duration: 9s; }
+.leaf:nth-child(8)  { left: 25%; animation-delay: 3.0s;  animation-duration: 12s; font-size: 16px; }
+.leaf:nth-child(9)  { left: 55%; animation-delay: 2.8s;  animation-duration: 7s;  font-size: 26px; }
+.leaf:nth-child(10) { left: 92%; animation-delay: 1.2s;  animation-duration: 10s; font-size: 18px; }
+
+@keyframes fall {
+  0%   { transform: translateY(-60px) rotate(0deg);   opacity: 0; }
+  10%  { opacity: 0.7; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 700px;
+}
+
+.hero-label {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.3s forwards;
+}
+
+.hero-title {
+  font-family: 'DM Serif Display', 'Noto Serif TC', serif;
+  font-size: clamp(36px, 8vw, 72px);
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+}
+
+.hero-title-ja {
+  display: block;
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(18px, 4vw, 30px);
+  color: var(--gold);
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-top: 8px;
+}
+
+.hero-sub {
+  color: rgba(255,255,255,0.65);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-top: 16px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.9s forwards;
+}
+
+.hero-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 28px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.2s forwards;
+}
+
+.pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.85);
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 1.5s forwards;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { transform: scaleY(1); opacity: 0.4; }
+  50% { transform: scaleY(1.3); opacity: 0.8; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── NAV ──────────────────────────────────────── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(26, 14, 8, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(232,184,75,0.2);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+
+.nav-item {
+  flex-shrink: 0;
+  padding: 14px 16px;
+  color: rgba(255,255,255,0.5);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+.nav-item:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ── LAYOUT ───────────────────────────────────── */
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ── SECTION HEADERS ──────────────────────────── */
+.section {
+  padding: 56px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sec-label {
+  font-size: 10px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 6px;
+}
+
+.sec-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--deep-red);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sec-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--border), transparent);
+}
+
+/* ── OVERVIEW GRID ────────────────────────────── */
+.overview-band {
+  background: var(--ink);
+  padding: 40px 20px;
+}
+
+.ov-grid {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media(min-width:600px) { .ov-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.ov-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(232,184,75,0.2);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  color: white;
+  transition: background 0.2s;
+}
+.ov-card:hover { background: rgba(255,255,255,0.11); }
+.ov-icon { font-size: 26px; margin-bottom: 8px; }
+.ov-label { font-size: 10px; letter-spacing: 2px; opacity: 0.6; margin-bottom: 4px; text-transform: uppercase; }
+.ov-val { font-family: 'Noto Serif TC', serif; font-size: 15px; font-weight: 700; color: var(--gold); }
+
+/* ── FLIGHT CARD ──────────────────────────────── */
+.flight-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media(max-width:600px) { .flight-row { grid-template-columns: 1fr; } }
+
+.flight-card {
+  background: var(--warm-white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.flight-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.flight-card.depart::before { background: linear-gradient(to right, var(--red), var(--orange)); }
+.flight-card.return::before { background: linear-gradient(to right, var(--blue), #2980b9); }
+
+.flight-dir {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 12px;
+}
+
+.flight-route {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.flight-time {
+  font-family: 'DM Serif Display', serif;
+  font-size: 30px;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.flight-arrow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.flight-line {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+  position: relative;
+}
+.flight-line::after {
+  content: '✈';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: var(--mid);
+}
+
+.flight-num {
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 1px;
+}
+
+.flight-airport {
+  font-size: 11px;
+  color: var(--mid);
+  margin-top: 4px;
+}
+
+.flight-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.flight-price {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--red);
+}
+.flight-price span { font-size: 12px; color: var(--mid); font-weight: 400; }
+
+.flight-badge {
+  background: var(--red-bg);
+  color: var(--red);
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* ── NOTICE BOX ───────────────────────────────── */
+.notice {
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.notice.warn { background: var(--red-bg); border-left: 3px solid var(--red); }
+.notice.info { background: var(--light-blue); border-left: 3px solid var(--blue); }
+.notice.tip  { background: var(--yellow-bg); border-left: 3px solid var(--amber); }
+.notice strong { color: var(--red); }
+.notice.info strong { color: var(--blue); }
+.notice.tip strong { color: var(--amber); }
+
+/* ── OVERVIEW TABLE ───────────────────────────── */
+.ov-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+.ov-table th {
+  background: var(--deep-red);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+.ov-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.ov-table tr:nth-child(even) td { background: var(--paper); }
+.ov-table tr:hover td { background: #f0e6d0; }
+.ov-table .day-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ── DAY CARDS ────────────────────────────────── */
+.day-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.05);
+  transition: box-shadow 0.2s;
+}
+.day-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+
+.day-header {
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.day-num-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Serif TC', serif;
+  flex-shrink: 0;
+  color: white;
+}
+.day-num-badge .dn { font-size: 9px; letter-spacing: 2px; opacity: 0.8; }
+.day-num-badge .dd { font-size: 20px; font-weight: 700; line-height: 1; }
+
+.d1 .day-num-badge { background: linear-gradient(135deg, #7a1810, #b02a1a); }
+.d2 .day-num-badge { background: linear-gradient(135deg, #b02a1a, #c84020); }
+.d3 .day-num-badge { background: linear-gradient(135deg, #c84020, #d4601a); }
+.d4 .day-num-badge { background: linear-gradient(135deg, #d4601a, #c8860a); }
+.d5 .day-num-badge { background: linear-gradient(135deg, #c8860a, #8b6010); }
+.d6 .day-num-badge { background: linear-gradient(135deg, #1a3f6b, #2060a0); }
+
+.day-meta { flex: 1; }
+.day-date { font-size: 11px; letter-spacing: 2px; color: var(--mid); margin-bottom: 2px; }
+.day-title-text {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.day-toggle {
+  font-size: 18px;
+  color: var(--mid);
+  transition: transform 0.3s;
+}
+.day-card.open .day-toggle { transform: rotate(180deg); }
+
+.day-body {
+  border-top: 1px solid var(--border);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+.day-card.open .day-body { max-height: 3000px; }
+
+/* ── TIMELINE ─────────────────────────────────── */
+.tl { padding: 0; }
+
+.tl-row {
+  display: grid;
+  grid-template-columns: 60px 32px 1fr;
+  gap: 0;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0e8d8;
+  align-items: start;
+  transition: background 0.15s;
+}
+.tl-row:hover { background: #fdf8f0; }
+.tl-row:last-child { border-bottom: none; }
+
+.tl-time {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--mid);
+  padding-top: 2px;
+  letter-spacing: 0.3px;
+}
+
+.tl-icon {
+  font-size: 16px;
+  text-align: center;
+  padding-top: 1px;
+}
+
+.tl-content {}
+.tl-title {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--ink);
+  margin-bottom: 3px;
+}
+.tl-desc {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.6;
+}
+
+.tl-row.transport { background: #f0f5fc; }
+.tl-row.transport .tl-title { color: var(--blue); }
+.tl-row.transport .tl-desc { color: #3060a0; }
+.tl-row.transport:hover { background: #e8f0f8; }
+
+.tl-row.food { background: #fff8f0; }
+.tl-row.food .tl-title { color: #7a3a10; }
+.tl-row.food:hover { background: #fff3e8; }
+
+.tl-row.highlight { background: linear-gradient(to right, #fce8e5, #fff8f0); }
+.tl-row.highlight .tl-title { color: var(--red); }
+.tl-row.highlight:hover { background: linear-gradient(to right, #fad0cc, #fff0e0); }
+
+.tl-row.stay { background: #f0faf4; }
+.tl-row.stay .tl-title { color: var(--green); }
+
+.tl-row.warn-row { background: #fce8e5; }
+.tl-row.warn-row .tl-title { color: var(--red); }
+
+.tl-tag {
+  display: inline-block;
+  font-size: 10px;
+  padding: 1px 8px;
+  border-radius: 10px;
+  margin-left: 6px;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.tag-red { background: #fce8e5; color: var(--red); }
+.tag-blue { background: var(--light-blue); color: var(--blue); }
+.tag-amber { background: var(--yellow-bg); color: var(--amber); }
+.tag-green { background: #e8f8ee; color: var(--green); }
+
+/* ── TRANSPORT TABLE ──────────────────────────── */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.data-table th {
+  background: var(--deep-red);
+  color: white;
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.data-table th:last-child { text-align: right; }
+.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.data-table td:last-child { text-align: right; font-weight: 600; color: var(--red); white-space: nowrap; }
+.data-table tr:nth-child(even) td { background: var(--paper); }
+.total-row td { background: var(--deep-red) !important; color: white !important; font-weight: 700; }
+.total-row td:last-child { color: var(--gold) !important; font-size: 16px; }
+
+/* ── BUDGET ───────────────────────────────────── */
+.budget-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* ── TIPS GRID ────────────────────────────────── */
+.tips-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media(min-width:600px) { .tips-grid { grid-template-columns: 1fr 1fr; } }
+
+.tip-card {
+  border-radius: 12px;
+  padding: 16px 18px;
+  border-left: 3px solid;
+}
+.tip-card.red   { background: var(--red-bg);    border-color: var(--red);  }
+.tip-card.amber { background: var(--yellow-bg); border-color: var(--amber); }
+.tip-card.blue  { background: var(--light-blue);border-color: var(--blue); }
+
+.tip-card h4 {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tip-card.red h4   { color: var(--red); }
+.tip-card.amber h4 { color: var(--amber); }
+.tip-card.blue h4  { color: var(--blue); }
+
+.tip-card p, .tip-card li {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--ink);
+  opacity: 0.85;
+}
+.tip-card ul { padding-left: 16px; }
+
+/* ── FOOTER ───────────────────────────────────── */
+.footer {
+  background: var(--ink);
+  padding: 40px 24px;
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  line-height: 1.8;
+}
+.footer-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 16px;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+
+/* ── MISC ─────────────────────────────────────── */
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin: 8px 0;
+}
+
+.open-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--deep-red);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  border: none;
+  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+}
+.open-all-btn:hover { background: var(--red); }
+
+@media print {
+  .day-body { max-height: none !important; }
+  .hero { min-height: auto; padding: 40px; }
+  .nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="leaf">🍁</div><div class="leaf">🍂</div>
+  <div class="leaf">🍁</div><div class="leaf">🍂</div>
+  <div class="leaf">🍁</div><div class="leaf">🍂</div>
+  <div class="leaf">🍁</div><div class="leaf">🍂</div>
+  <div class="leaf">🍁</div><div class="leaf">🍂</div>
+
+  <div class="hero-content">
+    <div class="hero-label">🗾 Japan Autumn Journey 2026</div>
+    <h1 class="hero-title">
+      越後湯澤 × 富士山
+      <span class="hero-title-ja">紅葉自助遊</span>
+    </h1>
+    <p class="hero-sub">11月5日（四）— 11月10日（二）· 四人同行 · 東京進出</p>
+    <div class="hero-pills">
+      <span class="pill">🚄 新幹線</span>
+      <span class="pill">🚗 越後湯澤租車</span>
+      <span class="pill">🚗 富士自駕</span>
+      <span class="pill">🍁 清津峽</span>
+      <span class="pill">💧 龍ヶ窪名水</span>
+      <span class="pill">🗻 河口湖</span>
+      <span class="pill">🛁 溫泉旅宿</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══ NAV ═══════════════════════════════════════ -->
+<nav class="nav">
+  <a class="nav-item" href="#overview">📋 總覽</a>
+  <a class="nav-item" href="#flights">✈️ 班機</a>
+  <a class="nav-item" href="#itinerary">🗓 行程</a>
+  <a class="nav-item" href="#transport">🚄 交通費</a>
+  <a class="nav-item" href="#budget">💴 預算</a>
+  <a class="nav-item" href="#tips">⚠️ 提醒</a>
+</nav>
+
+<!-- ══ OVERVIEW CARDS ════════════════════════════ -->
+<div class="overview-band">
+  <div class="ov-grid">
+    <div class="ov-card">
+      <div class="ov-icon">📅</div>
+      <div class="ov-label">旅遊天數</div>
+      <div class="ov-val">6天5夜</div>
+    </div>
+    <div class="ov-card">
+      <div class="ov-icon">👥</div>
+      <div class="ov-label">人數</div>
+      <div class="ov-val">4人・2雙人房</div>
+    </div>
+    <div class="ov-card">
+      <div class="ov-icon">✈️</div>
+      <div class="ov-label">機票/人</div>
+      <div class="ov-val">NT$8,198</div>
+    </div>
+    <div class="ov-card">
+      <div class="ov-icon">🍁</div>
+      <div class="ov-label">紅葉狀況</div>
+      <div class="ov-val">越後盛期・富士見頃</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FLIGHTS ════════════════════════════════════ -->
+<section id="flights" class="section">
+  <div class="sec-label">航班資訊</div>
+  <div class="sec-title">✈️ 機票確認</div>
+
+  <div class="flight-row" style="margin-bottom:20px;">
+    <div class="flight-card depart">
+      <div class="flight-dir">▶ 去程 · 11/4（三）深夜出發</div>
+      <div class="flight-route">
+        <div>
+          <div class="flight-time">00:10</div>
+          <div class="flight-airport">TPE 台北桃園</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="flight-line"></div>
+          <div class="flight-num">IT 216 · 2小時50分</div>
+        </div>
+        <div style="text-align:right">
+          <div class="flight-time">04:00</div>
+          <div class="flight-airport">HND 東京羽田</div>
+        </div>
+      </div>
+      <div class="flight-info">
+        <div>
+          <div class="flight-price">NT$4,299 <span>/人</span></div>
+          <div style="font-size:11px;color:var(--mid);margin-top:2px">虎航 Tigerair Taiwan</div>
+        </div>
+        <span class="flight-badge">羽田 HND</span>
+      </div>
+    </div>
+
+    <div class="flight-card return">
+      <div class="flight-dir">◀ 回程 · 11/10（二）晚間出發</div>
+      <div class="flight-route">
+        <div>
+          <div class="flight-time">20:25</div>
+          <div class="flight-airport">NRT 東京成田</div>
+        </div>
+        <div class="flight-arrow">
+          <div class="flight-line"></div>
+          <div class="flight-num">IT 203 · 4小時5分</div>
+        </div>
+        <div style="text-align:right">
+          <div class="flight-time">23:30</div>
+          <div class="flight-airport">TPE 台北桃園</div>
+        </div>
+      </div>
+      <div class="flight-info">
+        <div>
+          <div class="flight-price">NT$3,899 <span>/人</span></div>
+          <div style="font-size:11px;color:var(--mid);margin-top:2px">虎航 Tigerair Taiwan</div>
+        </div>
+        <span class="flight-badge" style="background:var(--light-blue);color:var(--blue);">成田 NRT</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="notice warn">
+    <strong>⚠️ 去程注意</strong>：IT216 是 11/4（三）<strong>深夜 00:10</strong> 出發，需在 <strong>11/4 晚上 22:00 前</strong>到達桃園機場 T2 辦理報到。
+  </div>
+  <div class="notice info">
+    <strong>💡 回程注意</strong>：回程改為<strong>成田機場</strong>（非羽田），Day6 需搭京成スカイライナー從東京站前往成田（約36分，¥2,570）。4人來回機票合計 <strong>NT$32,792</strong>。
+  </div>
+
+  <!-- JR Pass -->
+  <div style="background:var(--ink);border-radius:12px;padding:20px 22px;margin-top:20px;color:white;">
+    <div style="font-size:10px;letter-spacing:3px;color:var(--gold);margin-bottom:8px;">RECOMMENDED PASS</div>
+    <div style="font-family:'Noto Serif TC',serif;font-size:16px;font-weight:700;margin-bottom:8px;">🎫 JR 東京廣域周遊券　¥15,000 / 人（3日連續）</div>
+    <div style="font-size:12.5px;opacity:0.8;line-height:1.7;">
+      11/5 抵羽田後購買，Day1–Day4 全程新幹線均免費。<br>
+      涵蓋：羽田→東京 · 東京→越後湯澤（來回）· 越後湯澤→東京（Day4）<br>
+      4人合計 ¥60,000 · 可在羽田/東京站綠色窗口購買，或台灣 KKday/Klook 線上預購
+    </div>
+  </div>
+</section>
+
+<!-- ══ ITINERARY ══════════════════════════════════ -->
+<div style="background:var(--paper);padding:40px 20px 56px;" id="itinerary">
+<div class="wrap">
+  <div class="sec-label">每日行程</div>
+  <div class="sec-title">🗓 六天五夜詳細行程</div>
+
+  <!-- Overview Table -->
+  <div style="overflow-x:auto;margin-bottom:28px;">
+  <table class="ov-table">
+    <thead>
+      <tr>
+        <th>天</th><th>日期・星期</th><th>地點</th><th>主要活動</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="day-num">D1</span></td>
+        <td>11/5（四）</td>
+        <td>羽田→越後湯澤</td>
+        <td>04:00抵達，等新幹線，上午入住，下午取租車</td>
+      </tr>
+      <tr>
+        <td><span class="day-num">D2</span></td>
+        <td>11/6（五）</td>
+        <td>越後湯澤（自駕）</td>
+        <td>湯澤高原纜車🚡 紅葉健行・ぽんしゅ館</td>
+      </tr>
+      <tr>
+        <td><span class="day-num">D3</span></td>
+        <td>11/7（六）</td>
+        <td>越後湯澤 × 津南（自駕）</td>
+        <td>⚠️清津峽水鏡（需預約）・龍ヶ窪名水百選</td>
+      </tr>
+      <tr>
+        <td><span class="day-num">D4</span></td>
+        <td>11/8（日）</td>
+        <td>越後湯澤→河口湖</td>
+        <td>還車・新幹線→高速巴士移動・新倉山五重塔</td>
+      </tr>
+      <tr>
+        <td><span class="day-num">D5</span></td>
+        <td>11/9（一）</td>
+        <td>河口湖（自駕）</td>
+        <td>逆富士・紅葉迴廊🍁・忍野八海・夜間點燈</td>
+      </tr>
+      <tr>
+        <td><span class="day-num">D6</span></td>
+        <td>11/10（二）</td>
+        <td>河口湖→東京→成田</td>
+        <td>還車・東京購物・スカイライナー・IT203回台</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <button class="open-all-btn" onclick="toggleAll()">📋 展開全部行程</button>
+
+  <!-- DAY 1 -->
+  <div class="day-card d1" id="day1">
+    <div class="day-header" onclick="toggle('day1')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">1</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/5（四）· 出發日</div>
+        <div class="day-title-text">🛬 羽田機場 → 越後湯澤</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row warn-row">
+          <div class="tl-time">11/4<br>22:00</div>
+          <div class="tl-icon">⚠️</div>
+          <div class="tl-content">
+            <div class="tl-title">桃園機場 T2 報到（前一晚深夜）<span class="tl-tag tag-red">必看</span></div>
+            <div class="tl-desc">虎航起飛前2.5小時辦理・帶護照・行李托運・出境安檢</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">00:10</div>
+          <div class="tl-icon">✈️</div>
+          <div class="tl-content">
+            <div class="tl-title">IT216 起飛　桃園 00:10 → 羽田 04:00</div>
+            <div class="tl-desc">飛行2小時50分・建議機上補眠・準備好入境資料（Visit Japan Web）</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">04:00</div>
+          <div class="tl-icon">🛬</div>
+          <div class="tl-content">
+            <div class="tl-title">抵達羽田機場 T3（國際線）</div>
+            <div class="tl-desc">深夜班入境通關人少快，約30分完成・換Suica・買JR廣域Pass・便利商店早餐</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">06:00</div>
+          <div class="tl-icon">🚝</div>
+          <div class="tl-content">
+            <div class="tl-title">羽田T3 → 濱松町　東京單軌電車首班（約20分）</div>
+            <div class="tl-desc">費用：¥519（Suica）・月台在入境大廳直結・往「濱松町」方向</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">06:20</div>
+          <div class="tl-icon">🚃</div>
+          <div class="tl-content">
+            <div class="tl-title">濱松町 → 東京站　JR山手線（約7分）</div>
+            <div class="tl-desc">2番ホーム往「上野・池袋」方向・東京站4番ホーム下車</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">06:52</div>
+          <div class="tl-icon">🚄</div>
+          <div class="tl-content">
+            <div class="tl-title">東京 06:52 → 越後湯澤 08:06　上越新幹線「とき301号」<span class="tl-tag tag-blue">JR Pass</span></div>
+            <div class="tl-desc">首班新幹線之一・20番ホーム往「新潟」・車程約74分・備選：07:24→08:38</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">08:10</div>
+          <div class="tl-icon">♨️</div>
+          <div class="tl-content">
+            <div class="tl-title">越後湯澤 入住・行李寄放・補眠</div>
+            <div class="tl-desc">推薦：松泉閣花月旅館（站前5分，10座溫泉池）・入住前先泡湯休息，早到可寄行李</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">14:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">取租車　Toyota Rent-a-Car 越後湯澤駅前店<span class="tl-tag tag-amber">連租2日</span></div>
+            <div class="tl-desc">駅西口步行1分・11月營業08:00–19:00・4人可租Vitz/Corolla・含保險約¥12,000–16,000/2日</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">下午</div>
+          <div class="tl-icon">🏪</div>
+          <div class="tl-content">
+            <div class="tl-title">輕鬆熟悉路況 + ぽんしゅ館</div>
+            <div class="tl-desc">¥500換豬口杯+5代幣，試飲新潟93家酒廠清酒・購入越光米、笹糰子等伴手禮</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">18:30</div>
+          <div class="tl-icon">🍢</div>
+          <div class="tl-content">
+            <div class="tl-title">晚餐：湯澤釜蔵</div>
+            <div class="tl-desc">越後湯澤站西口・魚沼食材爐端燒・八海山銘酒搭配・4人約¥16,000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2 -->
+  <div class="day-card d2" id="day2">
+    <div class="day-header" onclick="toggle('day2')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">2</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/6（五）· 越後湯澤</div>
+        <div class="day-title-text">🚡 湯澤高原纜車 × 紅葉健行</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row transport">
+          <div class="tl-time">09:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">自駕前往湯澤高原纜車（約10分）</div>
+            <div class="tl-desc">旅館→纜車站有停車場・早出發避免人潮</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">09:15</div>
+          <div class="tl-icon">🚡</div>
+          <div class="tl-content">
+            <div class="tl-title">湯澤高原空中纜車 上行<span class="tl-tag tag-red">必搭</span></div>
+            <div class="tl-desc">全球規模最大纜車之一（可容166人）・7分鐘升至海拔1,000m全景公園・來回¥1,800/人</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">09:30<br>–12:00</div>
+          <div class="tl-icon">🥾</div>
+          <div class="tl-content">
+            <div class="tl-title">全景公園紅葉健行（約2–3小時）</div>
+            <div class="tl-desc">山毛櫸紅葉步道・山頂足湯（免費）＋雲之上咖啡廳・眺望谷川連峰與魚沼平原・穿運動鞋即可</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">12:30</div>
+          <div class="tl-icon">🍽️</div>
+          <div class="tl-content">
+            <div class="tl-title">午餐：山頂雲之上咖啡廳 或 下山後小嶋屋</div>
+            <div class="tl-desc">小嶋屋：海藻片木蕎麥麵 · ¥1,500/人 · 越後湯澤站直達</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">14:00</div>
+          <div class="tl-icon">🌲</div>
+          <div class="tl-content">
+            <div class="tl-title">苗場・田代湖方向自駕兜風</div>
+            <div class="tl-desc">沿國道17號南下，苗場プリンスホテル前楓葉路，田代湖眺望富士（晴天可見）</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">16:00</div>
+          <div class="tl-icon">♨️</div>
+          <div class="tl-content">
+            <div class="tl-title">返回旅館・溫泉泡湯</div>
+            <div class="tl-desc">整理明日清津峽行程，確認清津峽預約狀況</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">19:00</div>
+          <div class="tl-icon">🍶</div>
+          <div class="tl-content">
+            <div class="tl-title">晚餐後 ぽんしゅ館夜間試酒</div>
+            <div class="tl-desc">站內營業至21:00・可邊試飲邊選明天伴手禮</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3 -->
+  <div class="day-card d3" id="day3">
+    <div class="day-header" onclick="toggle('day3')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">3</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/7（六）· 津南自駕一日遊</div>
+        <div class="day-title-text">🏔 清津峽水鏡 × 💧 龍ヶ窪名水</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row warn-row">
+          <div class="tl-time">事前</div>
+          <div class="tl-icon">⚠️</div>
+          <div class="tl-content">
+            <div class="tl-title">清津峽 11/7 是週六，務必提前網路預約<span class="tl-tag tag-red">必做</span></div>
+            <div class="tl-desc">官網：kiyotsu-kyokoku.jp · 選 ①08:30場次 · 費用¥1,000/人 · 建議出發前2–4週預約</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">08:30</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">自駕出發　越後湯澤 → 清津峽（約25分）</div>
+            <div class="tl-desc">走國道353號・沿途已可見山區紅葉・清津峽停車場有料¥500</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">09:00<br>–11:00</div>
+          <div class="tl-icon">🏔</div>
+          <div class="tl-content">
+            <div class="tl-title">清津峽溪谷隧道　日本三大峽谷<span class="tl-tag tag-red">主角</span></div>
+            <div class="tl-desc">全長750m隧道・盡頭「全景站」水鏡效果倒映峭壁・峽谷兩岸紅葉配柱狀岩壁・約2小時</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">11:30</div>
+          <div class="tl-icon">🍜</div>
+          <div class="tl-content">
+            <div class="tl-title">午餐：清津峽周邊 或 津南町區域覓食</div>
+            <div class="tl-desc">清津峽隧道旁有小屋輕食・或自駕至津南町中心區蕎麥麵店</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">13:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">清津峽 → 龍ヶ窪（約25分）</div>
+            <div class="tl-desc">走縣道117號・途經津南町・龍ヶ窪與津南ひまわり広場相距約10分（向日葵廣場11月已結束）</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">13:30<br>–14:30</div>
+          <div class="tl-icon">💧</div>
+          <div class="tl-content">
+            <div class="tl-title">龍ヶ窪の水　日本名水百選<span class="tl-tag tag-green">免費入場</span></div>
+            <div class="tl-desc">停車場步行5分・神秘湧泉池220m×70m・每分鐘30噸湧水一日全部換水・秋天楓葉倒映水面・竜ヶ窪神社可汲飲用名水・建議攜帶水瓶</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">15:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">龍ヶ窪 → 越後湯澤（約40分）</div>
+            <div class="tl-desc">走國道117號→353號返回・沿途津南秋山郷景色優美</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">16:00</div>
+          <div class="tl-icon">♨️</div>
+          <div class="tl-content">
+            <div class="tl-title">溫泉 + 整理行李（明日退房）</div>
+            <div class="tl-desc">大件行李可宅配至河口湖旅館（ヤマト運輸，便利店辦理，¥1,500–2,000/件）</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">18:30</div>
+          <div class="tl-icon">🍽️</div>
+          <div class="tl-content">
+            <div class="tl-title">晚餐：越後湯澤站周邊和食</div>
+            <div class="tl-desc">推薦魚沼之里周邊・或站內美食街・最後在越後湯澤吃一頓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4 -->
+  <div class="day-card d4" id="day4">
+    <div class="day-header" onclick="toggle('day4')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">4</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/8（日）· 移動日</div>
+        <div class="day-title-text">🚄 越後湯澤 → 新宿 → 🚗 河口湖</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-time">08:00</div>
+          <div class="tl-icon">🏨</div>
+          <div class="tl-content">
+            <div class="tl-title">退房・行李處理</div>
+            <div class="tl-desc">大件行李前日已宅配・隨身輕便包出行・投幣置物櫃備用</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">09:30</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">還車　Toyota Rent-a-Car 越後湯澤駅前店</div>
+            <div class="tl-desc">記得加滿油還車・確認車內無遺忘物品</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">10:30</div>
+          <div class="tl-icon">🚄</div>
+          <div class="tl-content">
+            <div class="tl-title">越後湯澤 → 東京站　上越新幹線「とき」（約74分）<span class="tl-tag tag-blue">JR Pass</span></div>
+            <div class="tl-desc">建議搭10:30–11:00間班次・JR廣域Pass第4天使用（最後使用日）</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">12:00</div>
+          <div class="tl-icon">🚃</div>
+          <div class="tl-content">
+            <div class="tl-title">東京站 → 新宿　JR中央線快速（約10分）</div>
+            <div class="tl-desc">¥200 Suica・往「バスタ新宿」南口・3樓高速バスターミナル</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">12:30</div>
+          <div class="tl-icon">🍱</div>
+          <div class="tl-content">
+            <div class="tl-title">新宿午餐</div>
+            <div class="tl-desc">新宿站周邊自選・推薦新宿高島屋B1美食街</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">14:00</div>
+          <div class="tl-icon">🚌</div>
+          <div class="tl-content">
+            <div class="tl-title">バスタ新宿 → 河口湖駅　富士急高速バス（約1h45m）<span class="tl-tag tag-red">需預約</span></div>
+            <div class="tl-desc">費用：¥2,200/人・全席指定・ハイウェイバスドットコム提前預約・週日旺季必訂</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">16:30</div>
+          <div class="tl-icon">🗼</div>
+          <div class="tl-content">
+            <div class="tl-title">新倉山淺間公園（五重塔）<span class="tl-tag tag-red">打卡</span></div>
+            <div class="tl-desc">取車後自駕約10分・398階石梯至忠靈塔・秋葉+五重塔+富士山明信片絕景・夕陽前光線最美</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">16:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">河口湖 取租車（連租2晚）</div>
+            <div class="tl-desc">Toyota/Times 河口湖站附近・建議租Noah/Voxy等7人座・4人均攤¥8,000–10,000/2日</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">18:30</div>
+          <div class="tl-icon">🍲</div>
+          <div class="tl-content">
+            <div class="tl-title">晚餐：ほうとう不動</div>
+            <div class="tl-desc">山梨鄉土料理餺飥鍋・寬麵+南瓜味噌湯底・暖胃必吃・4人約¥10,000</div>
+          </div>
+        </div>
+        <div class="tl-row stay">
+          <div class="tl-time">夜</div>
+          <div class="tl-icon">🏨</div>
+          <div class="tl-content">
+            <div class="tl-title">入住河口湖（連住2晚）</div>
+            <div class="tl-desc">推薦：Den's Inn（北岸，步行至紅葉迴廊）・東橫INN富士河口湖大橋（含早餐）</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5 -->
+  <div class="day-card d5" id="day5">
+    <div class="day-header" onclick="toggle('day5')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">5</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/9（一）· 富士山周邊</div>
+        <div class="day-title-text">🍁 河口湖紅葉祭 × 忍野八海 × 夜間點燈</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row highlight">
+          <div class="tl-time">06:00</div>
+          <div class="tl-icon">🌄</div>
+          <div class="tl-content">
+            <div class="tl-title">清晨逆富士　河口湖大橋北岸<span class="tl-tag tag-red">必看</span></div>
+            <div class="tl-desc">清晨6–8點能見度最高・風平浪靜可見湖面倒映富士山「逆富士」・自駕至北岸免費停車</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">08:00</div>
+          <div class="tl-icon">☕</div>
+          <div class="tl-content">
+            <div class="tl-title">早餐：湖畔咖啡廳或旅館含餐</div>
+            <div class="tl-desc">補充能量準備一整天行程</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">09:00</div>
+          <div class="tl-icon">🍁</div>
+          <div class="tl-content">
+            <div class="tl-title">河口湖紅葉迴廊（もみじ回廊）<span class="tl-tag tag-red">主角</span></div>
+            <div class="tl-desc">約60棵巨大楓樹夾道・11月中旬紅黃交織最美・周邊攤販市集・北岸免費路邊停車</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">10:30</div>
+          <div class="tl-icon">🌸</div>
+          <div class="tl-content">
+            <div class="tl-title">大石公園　自駕約15分</div>
+            <div class="tl-desc">湖北岸俯瞰富士山全景・秋天掃把草點綴・旁有自然生活館可喝咖啡</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">12:00</div>
+          <div class="tl-icon">🍲</div>
+          <div class="tl-content">
+            <div class="tl-title">午餐：甲州ほうとう小作</div>
+            <div class="tl-desc">Tabelog高評・甲州名店・南瓜餺飥最受歡迎・4人約¥10,000</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">13:30</div>
+          <div class="tl-icon">💧</div>
+          <div class="tl-content">
+            <div class="tl-title">忍野八海　自駕約20分</div>
+            <div class="tl-desc">世界遺產富士山構成資產・富士雪融水8個清澈湧泉池・水車磨坊倒映秋葉・免費入場・停留1.5小時</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">16:00</div>
+          <div class="tl-icon">🗻</div>
+          <div class="tl-content">
+            <div class="tl-title">富士山五合目（視天氣）　スバルライン</div>
+            <div class="tl-desc">自駕收費¥2,100/車・海拔2,305m・11月積雪需羽絨外套+手套・若雲多可略過</div>
+          </div>
+        </div>
+        <div class="tl-row highlight">
+          <div class="tl-time">19:30</div>
+          <div class="tl-icon">🌙</div>
+          <div class="tl-content">
+            <div class="tl-title">河口湖紅葉迴廊 夜間點燈<span class="tl-tag tag-red">必看</span></div>
+            <div class="tl-desc">日落後–21:30・燈光照亮楓葉夢幻絕美・與白天截然不同・攤販市集持續至21:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6 -->
+  <div class="day-card d6" id="day6">
+    <div class="day-header" onclick="toggle('day6')">
+      <div class="day-num-badge"><span class="dn">DAY</span><span class="dd">6</span></div>
+      <div class="day-meta">
+        <div class="day-date">11/10（二）· 回程日</div>
+        <div class="day-title-text">🛍️ 東京購物 → ✈️ 成田出發回台</div>
+      </div>
+      <div class="day-toggle">▼</div>
+    </div>
+    <div class="day-body">
+      <div class="tl">
+        <div class="tl-row">
+          <div class="tl-time">07:00</div>
+          <div class="tl-icon">🌅</div>
+          <div class="tl-content">
+            <div class="tl-title">最後清晨逆富士（可選）</div>
+            <div class="tl-desc">河口湖北岸・行程允許則早起拍最後一次</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">09:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">還車　河口湖駅附近</div>
+            <div class="tl-desc">加滿油還車・確認無遺忘物品</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">10:00</div>
+          <div class="tl-icon">🚌</div>
+          <div class="tl-content">
+            <div class="tl-title">河口湖駅 → バスタ新宿　富士急高速バス（約1h45m）</div>
+            <div class="tl-desc">費用：¥2,200/人・週二平日班次充足・建議仍提前訂位</div>
+          </div>
+        </div>
+        <div class="tl-row food">
+          <div class="tl-time">12:00</div>
+          <div class="tl-icon">🍜</div>
+          <div class="tl-content">
+            <div class="tl-title">抵新宿 → 午餐</div>
+            <div class="tl-desc">新宿ルミネ・高島屋・小田急百貨B1美食街</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">12:30<br>–16:00</div>
+          <div class="tl-icon">🛍️</div>
+          <div class="tl-content">
+            <div class="tl-title">東京最後購物</div>
+            <div class="tl-desc">新宿ドン・キホーテ（免稅+5%券）・松本清藥妝・電器行（Bic Camera）・建議16:00前完成</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">16:30</div>
+          <div class="tl-icon">🚄</div>
+          <div class="tl-content">
+            <div class="tl-title">東京站 → 成田機場　京成スカイライナー（約36分）<span class="tl-tag tag-red">最快</span></div>
+            <div class="tl-desc">費用：¥2,570・從上野/日暮里搭乘・17:06頃抵成田・比N'EX快・比バス省時</div>
+          </div>
+        </div>
+        <div class="tl-row">
+          <div class="tl-time">18:25</div>
+          <div class="tl-icon">🛫</div>
+          <div class="tl-content">
+            <div class="tl-title">成田機場 辦理報到（起飛前2小時）</div>
+            <div class="tl-desc">虎航成田T3出境・建議17:00抵達以留充裕時間・最後免稅店掃貨</div>
+          </div>
+        </div>
+        <div class="tl-row transport">
+          <div class="tl-time">20:25</div>
+          <div class="tl-icon">✈️</div>
+          <div class="tl-content">
+            <div class="tl-title">IT203 起飛　成田 20:25 → 桃園 23:30</div>
+            <div class="tl-desc">飛行4小時5分・抵台後搭機場捷運至台北車站（約35分，NT$160）・趕得上末班高鐵</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end wrap -->
+</div><!-- end itinerary band -->
+
+<!-- ══ TRANSPORT ══════════════════════════════════ -->
+<section id="transport" class="section">
+  <div class="sec-label">交通費用</div>
+  <div class="sec-title">🚄 關鍵交通段費用一覽</div>
+
+  <div style="overflow-x:auto;">
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>區間</th>
+        <th>交通方式</th>
+        <th>時間</th>
+        <th>費用/人</th>
+        <th>備註</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>羽田T3 → 濱松町</td><td>東京單軌電車</td><td>約20分</td><td>¥519</td><td>Suica刷卡</td></tr>
+      <tr><td>濱松町 → 東京站</td><td>JR山手線</td><td>約7分</td><td>Suica含</td><td>2番ホーム上野方向</td></tr>
+      <tr><td>東京 → 越後湯澤（來回）</td><td>上越新幹線「とき」</td><td>約74分</td><td>JR廣域Pass含</td><td>Pass涵蓋Day1+Day4</td></tr>
+      <tr><td>越後湯澤 租車（2日）</td><td>Toyota 越後湯澤駅前店</td><td>Day1–Day4</td><td>4人均攤¥3,500–4,500</td><td>含保險・需國際駕照</td></tr>
+      <tr><td>清津峽 停車場</td><td>自駕</td><td>—</td><td>¥500</td><td>隧道入場¥1,000另計</td></tr>
+      <tr><td>東京站 → 新宿</td><td>JR中央線快速</td><td>約10分</td><td>¥200 Suica</td><td>バスタ新宿南口</td></tr>
+      <tr><td>新宿バスタ → 河口湖</td><td>富士急高速バス</td><td>約1h45m</td><td>¥2,200</td><td>需提前預約</td></tr>
+      <tr><td>河口湖 租車（2日）</td><td>Toyota/Times 河口湖站</td><td>Day4–Day6</td><td>4人均攤¥4,500–6,000</td><td>含保險</td></tr>
+      <tr><td>河口湖 → 新宿バスタ</td><td>富士急高速バス</td><td>約1h45m</td><td>¥2,200</td><td>週二班次充足</td></tr>
+      <tr><td>東京（上野/日暮里）→ 成田</td><td>京成スカイライナー</td><td>約36分</td><td>¥2,570</td><td>最快回成田方式</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ══ BUDGET ═════════════════════════════════════ -->
+<div style="background:var(--paper);padding:40px 20px;" id="budget">
+<div class="wrap">
+  <div class="sec-label">費用估算</div>
+  <div class="sec-title">💴 全程預算（每人均攤）</div>
+
+  <div class="budget-card">
+  <div style="overflow-x:auto;">
+  <table class="data-table">
+    <thead>
+      <tr><th>項目</th><th>說明</th><th style="text-align:right">每人估算</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>✈️ 機票（IT216+IT203）</td><td>11/4深夜去程＋11/10晚回程</td><td>NT$8,198（約¥36,000）</td></tr>
+      <tr><td>🎫 JR廣域周遊券 3日</td><td>含越後湯澤新幹線來回，Day1–Day4</td><td>¥15,000</td></tr>
+      <tr><td>🚗 越後湯澤租車（4人均攤）</td><td>Day1下午–Day4上午，約2天</td><td>¥3,500–4,500</td></tr>
+      <tr><td>🚌 高速バス 去+回</td><td>新宿↔河口湖各¥2,200</td><td>¥4,400</td></tr>
+      <tr><td>🚗 河口湖租車（4人均攤）</td><td>Day4下午–Day6上午，約2天</td><td>¥4,500–6,000</td></tr>
+      <tr><td>🎫 景點門票</td><td>纜車¥1,800+清津峽¥1,000+五合目¥525</td><td>¥3,325</td></tr>
+      <tr><td>🚄 京成スカイライナー</td><td>日暮里→成田（Day6）</td><td>¥2,570</td></tr>
+      <tr><td>🏨 住宿 5晚（2間均攤）</td><td>越後湯澤2泊+河口湖2泊+東京1泊</td><td>¥15,000</td></tr>
+      <tr><td>🍽️ 餐費 6天</td><td>每天約¥4,000–5,000</td><td>¥27,000</td></tr>
+      <tr><td>🎁 購物伴手禮</td><td>ぽんしゅ館、藥妝、電器等</td><td>¥10,000</td></tr>
+      <tr><td>📶 WiFi / SIM</td><td>4人共用口袋WiFi</td><td>¥1,500</td></tr>
+      <tr><td>🔵 雜費緩衝</td><td>地鐵、便利商店、停車費等</td><td>¥5,000</td></tr>
+    </tbody>
+    <tfoot>
+      <tr class="total-row"><td colspan="2"><strong>💴 每人不含機票合計</strong></td><td><strong>¥91,000–95,000</strong></td></tr>
+      <tr class="total-row" style="opacity:0.85"><td colspan="2"><strong>💴 每人含機票合計</strong></td><td><strong>¥127,000–131,000</strong></td></tr>
+      <tr class="total-row" style="opacity:0.7"><td colspan="2"><strong>👥 4人總費用（含機票）</strong></td><td><strong>¥508,000–524,000</strong></td></tr>
+    </tfoot>
+  </table>
+  </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ TIPS ═══════════════════════════════════════ -->
+<section id="tips" class="section">
+  <div class="sec-label">注意事項</div>
+  <div class="sec-title">⚠️ 旅遊重要提醒</div>
+
+  <div class="tips-grid">
+    <div class="tip-card red">
+      <h4>🔴 清津峽預約（必做）</h4>
+      <p>11/7（六）為假日，分時段入場制，<strong>出發前2–4週</strong>至官網預約。選08:30場次。費用大人¥1,000/人。<br>官網：kiyotsu-kyokoku.jp</p>
+    </div>
+    <div class="tip-card red">
+      <h4>🔴 高速バス預約（必做）</h4>
+      <p>新宿↔河口湖旺季座位有限，在<strong>ハイウェイバスドットコム</strong>提前預約。去程11/8（日）尤其要早。</p>
+    </div>
+    <div class="tip-card amber">
+      <h4>🟡 JR廣域周遊券</h4>
+      <p>建議台灣 KKday/Klook 預購，抵羽田取票。11/5啟用，Day1–Day4新幹線全包，4人合計¥60,000省約¥18,000。</p>
+    </div>
+    <div class="tip-card amber">
+      <h4>🟡 租車國際駕照</h4>
+      <p>需台灣有效駕照＋國際駕照（監理所申辦1–2天）。日本<strong>靠左行駛，方向盤在右側</strong>。兩地均需還相同車款門店。</p>
+    </div>
+    <div class="tip-card blue">
+      <h4>🔵 11月氣溫穿著</h4>
+      <ul>
+        <li>越後湯澤：日間8–14°C，早晚偏冷</li>
+        <li>河口湖：最低約1–3°C</li>
+        <li>五合目：0–5°C，需羽絨外套+手套</li>
+      </ul>
+    </div>
+    <div class="tip-card blue">
+      <h4>🔵 實用App & 工具</h4>
+      <ul>
+        <li>Google Maps（導航、公車時刻）</li>
+        <li>乗換案内 Jorudan（電車換乘）</li>
+        <li>Tabelog（餐廳評分，3.5+推薦）</li>
+        <li>Suica（iPhone 錢包可設定）</li>
+        <li>Visit Japan Web（入境預填）</li>
+      </ul>
+    </div>
+    <div class="tip-card amber">
+      <h4>🟡 深夜抵達羽田注意</h4>
+      <p>04:00入境後新幹線首班約06:00，空檔約2小時。羽田機場24小時便利商店可補餐，入境大廳有休息座位。</p>
+    </div>
+    <div class="tip-card amber">
+      <h4>🟡 成田回程行程</h4>
+      <p>Day6 建議16:30前從東京站出發搭スカイライナー，17:06抵成田，留2小時辦理報到+免稅購物。IT203是20:25出發。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-title">🍁 越後湯澤 × 富士山 紅葉自助遊 2026</div>
+  <div>11月5日（四）— 11月10日（二）· 四人同行</div>
+  <div style="margin-top:8px;font-size:11px;">
+    票價・班次・景點資訊出發前請至各官方網站確認最新版本<br>
+    清津峽 kiyotsu-kyokoku.jp · 高速バス highwaybus.com · JR Pass jreast.co.jp
+  </div>
+</footer>
+
+<script>
+function toggle(id) {
+  const card = document.getElementById(id);
+  card.classList.toggle('open');
+}
+
+let allOpen = false;
+function toggleAll() {
+  allOpen = !allOpen;
+  ['day1','day2','day3','day4','day5','day6'].forEach(id => {
+    const card = document.getElementById(id);
+    if (allOpen) card.classList.add('open');
+    else card.classList.remove('open');
+  });
+  document.querySelector('.open-all-btn').textContent =
+    allOpen ? '📋 收合全部行程' : '📋 展開全部行程';
+}
+
+// Auto-open Day1 on load
+window.addEventListener('load', () => {
+  document.getElementById('day1').classList.add('open');
+});
+</script>
+
+</body>
+</html>
