@@ -570,6 +570,34 @@ body {
 .tl-row.warn-row { background: #fce8e5; }
 .tl-row.warn-row .tl-title { color: var(--red); }
 
+/* ── OPTION BLOCKS ────────────────────────────── */
+.option-block {
+  margin: 0 0 0 0;
+  border-top: 1px dashed var(--border);
+}
+.option-label {
+  padding: 7px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.opt-a { background: linear-gradient(to right, #e8f4fd, #f0f8ff); color: var(--blue); }
+.opt-b { background: linear-gradient(to right, #e8f8ee, #f0fff4); color: var(--green); }
+.option-or {
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 11px;
+  color: var(--mid);
+  letter-spacing: 3px;
+  background: var(--paper);
+  border-top: 1px dashed var(--border);
+  border-bottom: 1px dashed var(--border);
+}
+
 .tl-tag {
   display: inline-block;
   font-size: 10px;
@@ -780,7 +808,7 @@ body {
 
   <div class="flight-row" style="margin-bottom:20px;">
     <div class="flight-card depart">
-      <div class="flight-dir">▶ 去程 · 11/5（四）深夜出發</div>
+      <div class="flight-dir">▶ 去程 · 11/4（三）深夜出發</div>
       <div class="flight-route">
         <div>
           <div class="flight-time">00:10</div>
@@ -831,7 +859,7 @@ body {
   </div>
 
   <div class="notice warn">
-    <strong>⚠️ 去程注意</strong>：IT216 是 11/4（三）<strong>深夜 00:10</strong> 出發，需在 <strong>11/4 晚上 22:00 前</strong>到達桃園機場 T2 辦理報到。
+    <strong>⚠️ 去程注意</strong>：IT216 是 <strong>11/5（四）00:10</strong> 出發（跨日零點後），需在 <strong>11/4（三）晚上 22:00 前</strong>到達桃園機場 T2 辦理報到。
   </div>
   <div class="notice info">
     <strong>💡 回程注意</strong>：回程改為<strong>成田機場</strong>（非羽田），Day6 需搭京成スカイライナー從東京站前往成田（約36分，¥2,570）。4人來回機票合計 <strong>NT$32,792</strong>。
@@ -847,6 +875,134 @@ body {
       4人合計 ¥60,000 · 可在羽田/東京站綠色窗口購買，或台灣 KKday/Klook 線上預購
     </div>
   </div>
+
+  <!-- ── TICKET COMPARISON ─────────────────────── -->
+  <div style="margin-top:28px;">
+    <div class="sec-label">機票選擇參考</div>
+    <div class="sec-title" style="font-size:18px;">🎫 三種機票組合比較</div>
+
+    <div style="display:grid;grid-template-columns:1fr;gap:14px;">
+
+      <!-- 組合一 -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+        <div style="background:linear-gradient(to right,#c84020,#e06040);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="color:white;">
+            <div style="font-size:10px;letter-spacing:3px;opacity:0.8;margin-bottom:3px;">OPTION 1 · 目前方案</div>
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;">全虎航</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.2);color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;">NT$8,198/人</div>
+        </div>
+        <div style="padding:14px 18px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12.5px;">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">去程</div>
+              <div style="font-weight:600;">IT216</div>
+              <div style="color:var(--mid);">桃園 <b>11/5 00:10</b> → 羽田 04:00</div>
+            </div>
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">回程</div>
+              <div style="font-weight:600;">IT203</div>
+              <div style="color:var(--mid);">成田 <b>11/10 20:25</b> → 桃園 23:30</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 去程羽田最近</span>
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 東京購物最長（到18:00）</span>
+            <span style="background:#fce8e5;color:var(--red);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">⚠️ 23:30抵台 高鐵末班難趕</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 組合二 -->
+      <div style="background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+        <div style="background:linear-gradient(to right,#1a5276,#2471a3);padding:12px 18px;display:flex;align-items:center;justify-content:space-between;">
+          <div style="color:white;">
+            <div style="font-size:10px;letter-spacing:3px;opacity:0.8;margin-bottom:3px;">OPTION 2</div>
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;">去程虎航 ＋ 回程酷航</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.2);color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;">約NT$7,800–9,300/人</div>
+        </div>
+        <div style="padding:14px 18px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12.5px;">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">去程</div>
+              <div style="font-weight:600;">IT216（虎航）</div>
+              <div style="color:var(--mid);">桃園 <b>11/5 00:10</b> → 羽田 04:00</div>
+            </div>
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">回程</div>
+              <div style="font-weight:600;">TR899（酷航）</div>
+              <div style="color:var(--mid);">成田 <b>11/10 約11:25</b> → 桃園 14:40</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 14:40最早抵台 高鐵全程可趕</span>
+            <span style="background:#fce8e5;color:var(--red);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">⚠️ Day6早上就要去機場</span>
+            <span style="background:#fce8e5;color:var(--red);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">⚠️ 東京購物幾乎沒時間</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 組合三 -->
+      <div style="background:white;border:2px solid var(--amber);border-radius:14px;overflow:hidden;position:relative;">
+        <div style="position:absolute;top:12px;right:14px;background:var(--amber);color:white;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1px;">推薦</div>
+        <div style="background:linear-gradient(to right,#d4601a,#e8860a);padding:12px 18px;">
+          <div style="color:white;">
+            <div style="font-size:10px;letter-spacing:3px;opacity:0.8;margin-bottom:3px;">OPTION 3 · 推薦</div>
+            <div style="font-family:'Noto Serif TC',serif;font-size:15px;font-weight:700;">全樂桃 Peach</div>
+          </div>
+        </div>
+        <div style="padding:14px 18px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:12.5px;">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">去程</div>
+              <div style="font-weight:600;">MM620</div>
+              <div style="color:var(--mid);">桃園 <b>11/5 02:00</b> → 成田 06:30</div>
+            </div>
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;color:var(--mid);margin-bottom:4px;">回程</div>
+              <div style="font-weight:600;">MM625</div>
+              <div style="color:var(--mid);">成田 <b>11/10 16:45</b> → 桃園 20:15</div>
+            </div>
+          </div>
+          <div style="margin-top:8px;padding:8px 12px;background:var(--yellow-bg);border-radius:8px;font-size:11.5px;color:var(--ink);">
+            ⚠️ 去程抵成田（非羽田），到越後湯澤需多約1小時，預計09:00–09:30抵達，仍可接受
+          </div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border);display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 票價最低潛力</span>
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 20:15抵台 可趕高鐵</span>
+            <span style="background:#e8f8ee;color:var(--green);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">✅ 東京購物到14:30</span>
+            <span style="background:#fce8e5;color:var(--red);padding:3px 10px;border-radius:10px;font-size:11px;font-weight:600;">⚠️ 去程成田入境較遠</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end grid -->
+
+    <!-- 比較表 -->
+    <div style="overflow-x:auto;margin-top:20px;">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th>組合一 全虎航</th>
+          <th>組合二 虎航+酷航</th>
+          <th>組合三 全樂桃 ⭐</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>去程入境機場</td><td>羽田 ✅</td><td>羽田 ✅</td><td>成田 ⚠️</td></tr>
+        <tr><td>預計抵越後湯澤</td><td>約08:06</td><td>約08:06</td><td>約09:00–09:30</td></tr>
+        <tr><td>回程出發時間</td><td>成田 20:25</td><td>成田 11:25</td><td>成田 16:45</td></tr>
+        <tr><td>抵台時間</td><td>23:30 ⚠️</td><td>14:40 ✅</td><td>20:15 ✅</td></tr>
+        <tr><td>Day6 購物截止</td><td>約18:00</td><td>幾乎沒有 ⚠️</td><td>約14:30</td></tr>
+        <tr><td>可趕高鐵回家</td><td>難 ⚠️</td><td>輕鬆 ✅</td><td>可以 ✅</td></tr>
+        <tr><td>估計票價/人</td><td>NT$8,198</td><td>約NT$7,800–9,300</td><td>約NT$5,500–9,000 ✅</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+  </div><!-- end ticket comparison -->
 </section>
 
 <!-- ══ ITINERARY ══════════════════════════════════ -->
@@ -868,13 +1024,13 @@ body {
         <td><span class="day-num">D1</span></td>
         <td>11/5（四）</td>
         <td>羽田→越後湯澤</td>
-        <td>04:00抵達，等新幹線，上午入住，下午取租車</td>
+        <td>04:00抵達，等新幹線，上午入住友人宅補眠，下午ぽんしゅ館</td>
       </tr>
       <tr>
         <td><span class="day-num">D2</span></td>
         <td>11/6（五）</td>
         <td>越後湯澤（自駕）</td>
-        <td>⛰️ 飯士山登山（1,111m）往返約5小時・ぽんしゅ館</td>
+        <td>⛰️ 飯士山登山（1,111m）・下午纜車或兜風（二選一）</td>
       </tr>
       <tr>
         <td><span class="day-num">D3</span></td>
@@ -971,23 +1127,15 @@ body {
           <div class="tl-icon">♨️</div>
           <div class="tl-content">
             <div class="tl-title">越後湯澤 入住・行李寄放・補眠</div>
-            <div class="tl-desc">推薦：松泉閣花月旅館（站前5分，10座溫泉池）・入住前先泡湯休息，早到可寄行李</div>
+            <div class="tl-desc">入住友人宅・稍作安頓休息・行李可先放置</div>
           </div>
         </div>
         <div class="tl-row">
           <div class="tl-time">14:00</div>
-          <div class="tl-icon">🚗</div>
-          <div class="tl-content">
-            <div class="tl-title">取租車　Toyota Rent-a-Car 越後湯澤駅前店<span class="tl-tag tag-amber">連租2日</span></div>
-            <div class="tl-desc">駅西口步行1分・11月營業08:00–19:00・4人可租Vitz/Corolla・含保險約¥12,000–16,000/2日</div>
-          </div>
-        </div>
-        <div class="tl-row">
-          <div class="tl-time">下午</div>
           <div class="tl-icon">🏪</div>
           <div class="tl-content">
-            <div class="tl-title">輕鬆熟悉路況 + ぽんしゅ館</div>
-            <div class="tl-desc">¥500換豬口杯+5代幣，試飲新潟93家酒廠清酒・購入越光米、笹糰子等伴手禮</div>
+            <div class="tl-title">ぽんしゅ館 試酒＋伴手禮</div>
+            <div class="tl-desc">¥500換豬口杯+5代幣・試飲新潟93家酒廠清酒・購越光米、笹糰子等伴手禮・站內輕鬆逛，不需開車</div>
           </div>
         </div>
         <div class="tl-row food">
@@ -1022,8 +1170,16 @@ body {
             <div class="tl-desc">登山鞋（非運動鞋）・雨衣・行動糧・水1L以上・登山杖建議・11月山頂氣溫約5°C，需備保暖層</div>
           </div>
         </div>
+        <div class="tl-row">
+          <div class="tl-time">08:00</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">取租車　Toyota Rent-a-Car 越後湯澤駅前店<span class="tl-tag tag-amber">開店即取</span></div>
+            <div class="tl-desc">駅西口步行1分・開店08:00即取・Day2取車省去Day1半天費用・含保險2日約¥9,000–13,000/輛</div>
+          </div>
+        </div>
         <div class="tl-row transport">
-          <div class="tl-time">06:30</div>
+          <div class="tl-time">08:20</div>
           <div class="tl-icon">🚗</div>
           <div class="tl-content">
             <div class="tl-title">自駕出發　越後湯澤 → 岩原スキー場登山口（約10分）</div>
@@ -1031,7 +1187,7 @@ body {
           </div>
         </div>
         <div class="tl-row highlight">
-          <div class="tl-time">07:00</div>
+          <div class="tl-time">08:30</div>
           <div class="tl-icon">⛰️</div>
           <div class="tl-content">
             <div class="tl-title">開始登飯士山　岩原スキー場南コース路線<span class="tl-tag tag-red">主角</span></div>
@@ -1039,7 +1195,7 @@ body {
           </div>
         </div>
         <div class="tl-row">
-          <div class="tl-time">07:00<br>–09:30</div>
+          <div class="tl-time">08:30<br>–11:00</div>
           <div class="tl-icon">🥾</div>
           <div class="tl-content">
             <div class="tl-title">上山（約2.5小時）</div>
@@ -1047,7 +1203,7 @@ body {
           </div>
         </div>
         <div class="tl-row highlight">
-          <div class="tl-time">09:30</div>
+          <div class="tl-time">11:00</div>
           <div class="tl-icon">🏔</div>
           <div class="tl-content">
             <div class="tl-title">飯士山山頂（1,111m）！360度展望<span class="tl-tag tag-red">絕景</span></div>
@@ -1055,7 +1211,7 @@ body {
           </div>
         </div>
         <div class="tl-row">
-          <div class="tl-time">09:30<br>–11:30</div>
+          <div class="tl-time">11:00<br>–13:00</div>
           <div class="tl-icon">🥾</div>
           <div class="tl-content">
             <div class="tl-title">下山（約2小時）</div>
@@ -1063,7 +1219,53 @@ body {
           </div>
         </div>
         <div class="tl-row food">
-          <div class="tl-time">12:30</div>
+          <div class="tl-time">13:30</div>
+          <div class="tl-icon">🍜</div>
+          <div class="tl-content">
+            <div class="tl-title">午餐：小嶋屋（越後湯澤站）</div>
+            <div class="tl-desc">海藻片木蕎麥麵・滑順Q彈・登山後最療癒・¥1,500/人・站內直達免淋雨</div>
+          </div>
+        </div>
+        <!-- 選項分岐 -->
+        <div class="option-or">⬇ 下午二擇一 ⬇</div>
+
+        <!-- 選項 A -->
+        <div class="option-label opt-a">🅐 選項A　湯澤高原纜車</div>
+        <div class="tl-row transport" style="background:#f0f8ff;">
+          <div class="tl-time">14:30</div>
+          <div class="tl-icon">🚗</div>
+          <div class="tl-content">
+            <div class="tl-title">自駕前往湯澤高原纜車（約10分）</div>
+            <div class="tl-desc">下山後放背包，直接開車・下午人少拍照更好</div>
+          </div>
+        </div>
+        <div class="tl-row highlight" style="background:linear-gradient(to right,#e8f4ff,#f0f8ff);">
+          <div class="tl-time">14:40<br>–16:30</div>
+          <div class="tl-icon">🚡</div>
+          <div class="tl-content">
+            <div class="tl-title">湯澤高原空中纜車 ＋ 全景公園<span class="tl-tag tag-blue">輕鬆</span></div>
+            <div class="tl-desc">纜車是坐著上去，完全不用爬山・山頂海拔1,000m足湯（免費）・360度眺望越後湯澤紅葉全景・與飯士山景觀互補・來回¥1,800/人</div>
+          </div>
+        </div>
+
+        <!-- OR divider -->
+        <div class="option-or">— OR —</div>
+
+        <!-- 選項 B -->
+        <div class="option-label opt-b">🅑 選項B　苗場・田代湖兜風</div>
+        <div class="tl-row" style="background:#f0fff4;">
+          <div class="tl-time">14:30<br>–16:30</div>
+          <div class="tl-icon">🌲</div>
+          <div class="tl-content">
+            <div class="tl-title">苗場・田代湖方向自駕兜風<span class="tl-tag tag-green">最輕鬆</span></div>
+            <div class="tl-desc">沿國道17號南下約20分・苗場プリンスホテル前楓葉道路・田代湖眺望秋色・全程坐車看景不用走路・登山後疲勞時最佳選擇</div>
+          </div>
+        </div>
+
+        <!-- 共同後段 -->
+        <div class="option-or">⬇ 以下共同 ⬇</div>
+        <div class="tl-row food">
+          <div class="tl-time">13:30</div>
           <div class="tl-icon">🍜</div>
           <div class="tl-content">
             <div class="tl-title">午餐：小嶋屋（越後湯澤站）</div>
@@ -1071,19 +1273,11 @@ body {
           </div>
         </div>
         <div class="tl-row">
-          <div class="tl-time">14:30</div>
-          <div class="tl-icon">🍶</div>
-          <div class="tl-content">
-            <div class="tl-title">ぽんしゅ館 試酒＋伴手禮</div>
-            <div class="tl-desc">¥500換豬口杯+5代幣・試飲新潟93家酒廠清酒・購越光米、笹糰子・站內輕鬆逛</div>
-          </div>
-        </div>
-        <div class="tl-row">
           <div class="tl-time">16:00</div>
           <div class="tl-icon">♨️</div>
           <div class="tl-content">
             <div class="tl-title">返回旅館・溫泉泡湯消除腿痠</div>
-            <div class="tl-desc">飯士山往返5小時・腿部肌肉疲勞・溫泉泡湯最佳恢復・明日清津峽為平地步行問題不大</div>
+            <div class="tl-desc">飯士山往返5小時・溫泉泡湯最佳恢復・明日清津峽+龍ヶ窪長途自駕，早點休息</div>
           </div>
         </div>
         <div class="tl-row food">
@@ -1272,10 +1466,10 @@ body {
         </div>
         <div class="tl-row stay">
           <div class="tl-time">夜</div>
-          <div class="tl-icon">🏨</div>
+          <div class="tl-icon">🏡</div>
           <div class="tl-content">
-            <div class="tl-title">入住河口湖（連住2晚）</div>
-            <div class="tl-desc">推薦：Den's Inn（北岸，步行至紅葉迴廊）・東橫INN富士河口湖大橋（含早餐）</div>
+            <div class="tl-title">入住 ヴィラ オレンジキャビン（連住2晚）<span class="tl-tag tag-green">貸別荘</span></div>
+            <div class="tl-desc">山梨縣富士河口湖町河口1916-3 · 河口湖站車程約15分・木造Log House貸切別荘・4人獨棟・BBQ設備（需預約）・免費停車場・全館免費WiFi・Check-in 15:00–22:00・Check-out 10:00</div>
           </div>
         </div>
       </div>
@@ -1497,7 +1691,7 @@ body {
       <tr><td>🚗 河口湖租車（4人均攤）</td><td>Day4下午–Day6上午，約2天</td><td>¥4,500–6,000</td></tr>
       <tr><td>🎫 景點門票</td><td>纜車¥1,800+清津峽¥1,000+五合目¥525</td><td>¥3,325</td></tr>
       <tr><td>🚄 京成スカイライナー</td><td>日暮里→成田（Day6）</td><td>¥2,570</td></tr>
-      <tr><td>🏨 住宿 5晚（2間均攤）</td><td>越後湯澤2泊+河口湖2泊+東京1泊</td><td>¥15,000</td></tr>
+      <tr><td>🏨 住宿 5晚（2間均攤）</td><td>河口湖2泊（ヴィラ オレンジキャビン）+東京1泊・越後湯澤為友人宅免費</td><td>¥15,000</td></tr>
       <tr><td>🍽️ 餐費 6天</td><td>每天約¥4,000–5,000</td><td>¥27,000</td></tr>
       <tr><td>🎁 購物伴手禮</td><td>ぽんしゅ館、藥妝、電器等</td><td>¥10,000</td></tr>
       <tr><td>📶 WiFi / SIM</td><td>4人共用口袋WiFi</td><td>¥1,500</td></tr>
