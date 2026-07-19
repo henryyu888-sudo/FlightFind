@@ -1,22 +1,21 @@
 # FlightFind
 
-Static HTML prototypes. No build system, package manager, dependencies, tests, or linters.
+Design assets for a **FlightFind** flight-comparison app (target platform: React Native / iOS style). This repo currently holds static HTML design mockups, design tokens, and a spec — there is no build system, package manager, dependencies, tests, or linters.
 
-- `main.html` — "FlightFind" mobile flight-search app prototype (Traditional Chinese UI). Self-contained: inline `<style>` + `<script>`, with mock flight data embedded in the script. Core flow: pick a route → search → view results/detail.
-- `japan-trip-2026.html` — a standalone travel-itinerary page.
+- `01-intake-home.html` — pre-search intake page + home
+- `02-search-fields.html` — search fields (quick search / hidden-city / reverse-ticket modes)
+- `03-results.html` — results pages for the three modes
+- `04-detail-my.html` — flight detail page + "My" page
+- `design-tokens.json` — colors (light/dark), typography, spacing, radius; intended for future React Native use
+- `flightfind_spec.md` — the product/design spec (source of truth for requirements)
+- `logo.svg` — wordmark logo
+
+`flightfind_spec.md` references a `mockups/` folder, but the mockup HTML files currently live at the repo root (a stray empty `mockups` file also exists).
 
 ## Cursor Cloud specific instructions
 
 ### Running
-These are plain static files; serve the repo root over HTTP and open the pages in a browser (e.g. `http://localhost:8000/main.html`).
-
-Non-obvious caveat: `main.html` has no `<meta charset>` and no `<!DOCTYPE>`, so its Traditional Chinese text renders as mojibake unless the server sends `Content-Type: text/html; charset=utf-8`. Plain `python3 -m http.server` does NOT send a charset and produces garbled text. Serve with an explicit UTF-8 charset instead:
-
-```
-python3 -c "import http.server,socketserver; h=http.server.SimpleHTTPRequestHandler; h.extensions_map={**h.extensions_map, '.html':'text/html; charset=utf-8', '.htm':'text/html; charset=utf-8'}; socketserver.TCPServer(('',8000),h).serve_forever()"
-```
-
-(`japan-trip-2026.html` declares its own `<meta charset="UTF-8">` and renders correctly under any server, but using the command above keeps both pages correct.)
+These are standalone static HTML files — serve the repo root over HTTP and open each page (e.g. `http://localhost:8000/01-intake-home.html`). Plain `python3 -m http.server 8000` works: all four mockups declare `<!DOCTYPE html>` and `<meta charset="UTF-8">`, so text renders correctly.
 
 ### Lint / Test / Build
-None configured. There is nothing to install, lint, test, or build.
+None configured. There is nothing to install, lint, test, or build. `design-tokens.json` and `flightfind_spec.md` guide future React Native implementation.
