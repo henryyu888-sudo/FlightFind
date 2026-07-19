@@ -1,0 +1,76 @@
+{
+  "meta": {
+    "app": "FlightFind",
+    "platform": "React Native (iOS style)",
+    "generated": "2026-07-19"
+  },
+  "colors": {
+    "light": {
+      "background": "#FFFFFF",
+      "backgroundSecondary": "#F4F3EF",
+      "backgroundTertiary": "#EDEBE4",
+      "textPrimary": "#1A1A1A",
+      "textSecondary": "#6B6B66",
+      "border": "rgba(0,0,0,0.12)",
+      "brandPrimary": "#D85A30",
+      "brandFill": "#F5C4B3",
+      "brandText": "#712B13",
+      "brandCtaText": "#FAECE7",
+      "warningFill": "#F0997B",
+      "warningText": "#4A1B0C",
+      "logoAccent": "#EF9F27",
+      "logoAccentText": "#412402"
+    },
+    "dark": {
+      "background": "#1C1C1A",
+      "backgroundSecondary": "#2A2A27",
+      "backgroundTertiary": "#38372F",
+      "textPrimary": "#F5F4EF",
+      "textSecondary": "#B4B2A9",
+      "border": "rgba(255,255,255,0.15)",
+      "brandPrimary": "#F0997B",
+      "brandFill": "#993C1D",
+      "brandText": "#F5C4B3",
+      "brandCtaText": "#4A1B0C",
+      "warningFill": "#D85A30",
+      "warningText": "#FAECE7",
+      "logoAccent": "#EF9F27",
+      "logoAccentText": "#412402"
+    }
+  },
+  "typography": {
+    "fontFamilyLatin": "SF Pro",
+    "fontFamilyChinese": "PingFang TC",
+    "sizes": {
+      "title": 17,
+      "subtitle": 15,
+      "body": 13,
+      "label": 11,
+      "caption": 10
+    },
+    "weights": {
+      "regular": 400,
+      "medium": 500
+    }
+  },
+  "radius": {
+    "sm": 6,
+    "md": 8,
+    "lg": 12,
+    "pill": 999
+  },
+  "spacing": {
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24
+  },
+  "logo": {
+    "file": "logo.svg",
+    "wordmark": "flightfind",
+    "flightColor": "textPrimary",
+    "findColor": "brandPrimary",
+    "iconColor": "logoAccent"
+  }
+}

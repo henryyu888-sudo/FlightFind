@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>FlightFind - 結果頁（三模式）</title>
+<style>
+:root{
+  --bg:#FFFFFF; --bg2:#F4F3EF; --bg3:#EDEBE4;
+  --text:#1A1A1A; --text2:#6B6B66; --border:rgba(0,0,0,0.12);
+  --fill:#F5C4B3; --ftext:#712B13; --strong:#D85A30;
+  --warnfill:#F0997B; --warntext:#4A1B0C;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1C1A; --bg2:#2A2A27; --bg3:#38372F;
+    --text:#F5F4EF; --text2:#B4B2A9; --border:rgba(255,255,255,0.15);
+    --fill:#993C1D; --ftext:#F5C4B3; --strong:#F0997B;
+    --warnfill:#D85A30; --warntext:#FAECE7;
+  }
+}
+body{font-family:"SF Pro","PingFang TC",-apple-system,sans-serif;background:var(--bg2);margin:0;padding:24px;}
+.wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.phone{width:230px;border-radius:28px;background:var(--bg3);border:0.5px solid var(--border);padding:9px;}
+.screen{background:var(--bg);border-radius:20px;padding:14px 13px;min-height:520px;display:flex;flex-direction:column;gap:10px;}
+.logo{font-size:13px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:3px;}
+.logo span{color:var(--strong);}
+.logo i{width:11px;height:11px;background:#EF9F27;border-radius:3px;display:inline-block;transform:rotate(20deg);}
+.tabs{display:flex;gap:10px;border-bottom:0.5px solid var(--border);}
+.tabs span{font-size:10px;color:var(--text2);padding-bottom:6px;}
+.tabs span.on{color:var(--strong);font-weight:500;border-bottom:2px solid var(--strong);}
+.chips{display:flex;gap:5px;flex-wrap:wrap;}
+.chip{font-size:10px;padding:4px 8px;border-radius:999px;border:0.5px solid var(--border);color:var(--text2);}
+.chip.on{background:var(--fill);color:var(--ftext);border-color:transparent;}
+.card{border:0.5px solid var(--border);border-radius:8px;padding:10px 11px;display:flex;flex-direction:column;gap:5px;}
+.val{font-size:12px;font-weight:500;color:var(--text);}
+.sub{font-size:10px;color:var(--text2);}
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;font-weight:500;padding:4px 7px;border-radius:8px;}
+p{margin:0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<div class="tabs"><span class="on">最便宜3班</span><span>時間最佳</span><span>廉價vs傳統</span><span>鄰近日期</span></div>
+<div class="chips"><span class="chip on">直飛</span><span class="chip">中華航空</span><span class="chip">長榮航空</span><span class="chip">價格低到高</span></div>
+<div class="card"><div style="display:flex;justify-content:space-between;"><span class="val">中華航空 CI102</span><span class="val" style="color:var(--strong);">$8,450</span></div><span class="sub">08:20 → 12:05・直飛・含行李</span></div>
+<div class="card"><div style="display:flex;justify-content:space-between;"><span class="val">長榮航空 BR118</span><span class="val" style="color:var(--strong);">$9,120</span></div><span class="sub">10:05 → 13:50・直飛・含行李</span></div>
+<div class="card"><div style="display:flex;justify-content:space-between;"><span class="val">星宇航空 JX822</span><span class="val" style="color:var(--strong);">$9,480</span></div><span class="sub">14:40 → 18:25・直飛・含行李</span></div>
+</div></div>
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p style="font-size:13px;font-weight:500;color:var(--text);">外站票組合</p>
+<div class="card">
+<div style="display:flex;justify-content:space-between;align-items:center;"><span class="val">組合一・省 28%</span><span class="badge" style="background:var(--warnfill);color:var(--warntext);">容忍度高</span></div>
+<span class="sub">①高雄→台北（接駁）</span>
+<span class="sub">②台北→大阪（去程）</span>
+<span class="sub">③大阪→台北（回程）</span>
+<span class="sub">④台北→高雄（接駁）</span>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border);padding-top:6px;"><span class="val">總價 $11,200</span><span class="badge" style="background:var(--fill);color:var(--ftext);">順道玩：西門町</span></div>
+</div>
+<div class="card"><div style="display:flex;justify-content:space-between;align-items:center;"><span class="val">組合二・省 21%</span><span class="badge" style="background:var(--bg3);color:var(--text2);">容忍度中</span></div><span class="sub">總價 $12,050・4 段航程</span></div>
+</div></div>
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p style="font-size:13px;font-weight:500;color:var(--text);">反向購票組合</p>
+<div class="card" style="border-color:var(--warnfill);">
+<div style="display:flex;justify-content:space-between;align-items:center;"><span class="val">組合一・省 35%</span><span class="badge" style="background:var(--warnfill);color:var(--warntext);">有風險</span></div>
+<span class="sub">去程：台北 → 大阪（正向票）</span>
+<span class="sub">回程：買「大阪→台北」實際只搭「台北→大阪」段</span>
+<div style="display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid var(--border);padding-top:6px;"><span class="val">總價 $9,800</span><span class="sub">點進去看完整風險說明</span></div>
+</div>
+<div class="card" style="border-color:var(--warnfill);"><div style="display:flex;justify-content:space-between;align-items:center;"><span class="val">組合二・省 30%</span><span class="badge" style="background:var(--warnfill);color:var(--warntext);">有風險</span></div><span class="sub">總價 $10,500</span></div>
+</div></div>
+
+</div>
+</body>
+</html>

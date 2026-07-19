@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>FlightFind - 搜尋欄位（三模式）</title>
+<style>
+:root{
+  --bg:#FFFFFF; --bg2:#F4F3EF; --bg3:#EDEBE4;
+  --text:#1A1A1A; --text2:#6B6B66; --border:rgba(0,0,0,0.12);
+  --fill:#F5C4B3; --ftext:#712B13; --strong:#D85A30; --cta-text:#FAECE7;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1C1A; --bg2:#2A2A27; --bg3:#38372F;
+    --text:#F5F4EF; --text2:#B4B2A9; --border:rgba(255,255,255,0.15);
+    --fill:#993C1D; --ftext:#F5C4B3; --strong:#F0997B; --cta-text:#4A1B0C;
+  }
+}
+body{font-family:"SF Pro","PingFang TC",-apple-system,sans-serif;background:var(--bg2);margin:0;padding:24px;}
+.wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.phone{width:230px;border-radius:28px;background:var(--bg3);border:0.5px solid var(--border);padding:9px;}
+.screen{background:var(--bg);border-radius:20px;padding:14px 13px;min-height:480px;display:flex;flex-direction:column;gap:11px;}
+.logo{font-size:13px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:3px;}
+.logo span{color:var(--strong);}
+.logo i{width:11px;height:11px;background:#EF9F27;border-radius:3px;display:inline-block;transform:rotate(20deg);}
+.title{font-size:14px;font-weight:500;margin:0;color:var(--text);}
+.row{display:flex;align-items:center;gap:9px;border:0.5px solid var(--border);border-radius:8px;padding:9px 10px;}
+.row div{display:flex;flex-direction:column;gap:2px;}
+.label{font-size:10px;color:var(--text2);}
+.val{font-size:12px;font-weight:500;color:var(--text);}
+.swap{text-align:center;font-size:12px;color:var(--text2);margin:-4px 0;}
+.note{font-size:10px;color:var(--text2);background:var(--bg3);border-radius:8px;padding:6px 8px;}
+.cta{background:var(--strong);color:var(--cta-text);text-align:center;font-size:13px;font-weight:500;padding:11px;border-radius:8px;margin-top:auto;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p class="title">快速搜尋</p>
+<div class="row"><div><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="swap">⇅</div>
+<div class="row"><div><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div><span class="label">出發日／返程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<span class="note">已帶入出發前詢問頁的城市/日期/人數</span>
+<div class="cta">搜尋航班</div>
+</div></div>
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p class="title">外站票 ⓘ</p>
+<div class="row"><div><span class="label">外站出發地</span><span class="val">高雄 KHH</span></div></div>
+<div class="row"><div><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="row"><div><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div><span class="label">出發日／返程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<div class="cta">搜尋組合</div>
+</div></div>
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p class="title">反向購票 ⓘ</p>
+<div class="row"><div><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="swap">⇅</div>
+<div class="row"><div><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div><span class="label">去程日／回程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<span class="note">回程為反向票，需了解風險後才能訂票</span>
+<div class="cta">搜尋組合</div>
+</div></div>
+
+</div>
+</body>
+</html>
