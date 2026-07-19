@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>flightfind</title>
+<style>
+:root{
+  --bg:#FFFFFF; --bg2:#F4F3EF; --bg3:#EDEBE4;
+  --text:#1A1A1A; --text2:#6B6B66; --border:rgba(0,0,0,0.12);
+  --fill:#F5C4B3; --ftext:#712B13; --strong:#D85A30; --cta-text:#FAECE7;
+  --warnfill:#F0997B; --warntext:#4A1B0C;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1C1A; --bg2:#2A2A27; --bg3:#38372F;
+    --text:#F5F4EF; --text2:#B4B2A9; --border:rgba(255,255,255,0.15);
+    --fill:#993C1D; --ftext:#F5C4B3; --strong:#F0997B; --cta-text:#4A1B0C;
+    --warnfill:#D85A30; --warntext:#FAECE7;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  font-family:"SF Pro","PingFang TC",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg2); margin:0; color:var(--text);
+  display:flex; justify-content:center;
+}
+.app{
+  width:100%; max-width:420px; min-height:100vh; background:var(--bg);
+  display:flex; flex-direction:column; position:relative;
+}
+.content{flex:1; padding:16px 16px 90px; display:flex; flex-direction:column; gap:14px;}
+.screen{display:none; flex-direction:column; gap:14px;}
+.screen.active{display:flex;}
+.logo{font-size:17px; font-weight:600; display:flex; align-items:center; gap:4px; padding:14px 16px 0;}
+.logo span{color:var(--strong);}
+.logo i{width:14px;height:14px;background:#EF9F27;border-radius:3px;display:inline-block;transform:rotate(20deg);}
+h1{font-size:19px; font-weight:600; margin:0;}
+h2{font-size:15px; font-weight:600; margin:0;}
+p{margin:0;}
+.seg{display:flex; background:var(--bg3); border-radius:12px; padding:3px; gap:2px;}
+.seg button{flex:1; border:none; background:none; text-align:center; font-size:13px; padding:9px 4px; border-radius:8px; color:var(--text2); font-family:inherit; cursor:pointer;}
+.seg button.on{background:var(--fill); color:var(--ftext); font-weight:600;}
+.row{display:flex; align-items:center; gap:12px; border:0.5px solid var(--border); border-radius:8px; padding:12px 14px; background:var(--bg); cursor:pointer;}
+.row .ic{font-size:18px; color:var(--strong); width:20px; text-align:center;}
+.field{display:flex; flex-direction:column; gap:2px;}
+.label{font-size:11px; color:var(--text2);}
+.val{font-size:14px; font-weight:600;}
+.swap{text-align:center; font-size:13px; color:var(--text2);}
+.badge{display:inline-flex; align-items:center; gap:6px; background:var(--fill); color:var(--ftext); font-size:12px; font-weight:600; padding:8px 12px; border-radius:8px;}
+.note{font-size:11px; color:var(--text2); background:var(--bg3); border-radius:8px; padding:8px 10px;}
+.cta{background:var(--strong); color:var(--cta-text); text-align:center; font-size:15px; font-weight:600; padding:14px; border-radius:8px; border:none; width:100%; font-family:inherit; cursor:pointer; margin-top:4px;}
+.cta.secondary{background:none; color:var(--strong); border:1px solid var(--strong);}
+.card{border:0.5px solid var(--border); border-radius:8px; padding:12px 14px; display:flex; flex-direction:column; gap:6px; cursor:pointer; background:var(--bg);}
+.card:active{background:var(--bg3);}
+.tabs{display:flex; gap:14px; border-bottom:0.5px solid var(--border); overflow-x:auto;}
+.tabs button{border:none; background:none; font-family:inherit; font-size:12px; color:var(--text2); padding-bottom:8px; white-space:nowrap; cursor:pointer;}
+.tabs button.on{color:var(--strong); font-weight:600; border-bottom:2px solid var(--strong);}
+.chips{display:flex; gap:6px; flex-wrap:wrap;}
+.chip{font-size:11px; padding:5px 10px; border-radius:999px; border:0.5px solid var(--border); color:var(--text2); background:var(--bg);}
+.chip.on{background:var(--fill); color:var(--ftext); border-color:transparent;}
+.sub{font-size:11px; color:var(--text2);}
+.smallbadge{display:inline-flex; align-items:center; gap:4px; font-size:11px; font-weight:600; padding:4px 8px; border-radius:8px;}
+.avatar{width:42px;height:42px;border-radius:50%;background:var(--fill);color:var(--ftext);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;}
+.backbar{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text2); cursor:pointer;}
+.navbar{
+  position:absolute; bottom:0; left:0; right:0; height:64px;
+  display:flex; border-top:0.5px solid var(--border); background:var(--bg);
+}
+.navbar button{flex:1; border:none; background:none; font-family:inherit; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; font-size:11px; color:var(--text2); cursor:pointer;}
+.navbar button.on{color:var(--strong); font-weight:600;}
+.hide{display:none !important;}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="content">
+
+<div class="screen active" id="screen-intake">
+<div class="logo">flight<span>find</span><i></i></div>
+<h1>出發前，先聊聊你的計畫</h1>
+<div class="seg">
+<button class="on">月份</button><button>明確日期</button><button>日期區間</button>
+</div>
+<div class="row"><span class="ic">&#128197;</span><div class="field"><span class="label">預計月份</span><span class="val">2026年10月</span></div></div>
+<div class="row"><span class="ic">&#128205;</span><div class="field"><span class="label">想去的城市</span><span class="val">大阪（KIX・ITM）</span></div></div>
+<div class="row"><span class="ic">&#128101;</span><div class="field"><span class="label">人數</span><span class="val">2 位成人</span></div></div>
+<span class="badge">10月偏貴，11月更划算</span>
+<span class="badge">2 人同行，找到相鄰座位機率高</span>
+<button class="cta" onclick="goHome()">開始搜尋</button>
+</div>
+
+<div class="screen" id="screen-home">
+<div class="logo">flight<span>find</span><i></i></div>
+<div class="seg">
+<button id="hometab-quick" class="on" onclick="setMode('quick')">快速搜尋</button>
+<button id="hometab-outbound" onclick="setMode('outbound')">外站票</button>
+<button id="hometab-reverse" onclick="setMode('reverse')">反向購票</button>
+</div>
+
+<div class="card" style="background:var(--fill); border-color:transparent;" onclick="goResults('reverse')">
+<span style="font-weight:600; color:var(--ftext);">智慧比價建議</span>
+<p style="font-size:12px; color:var(--ftext);">這趟行程用「反向購票」省最多，比快速搜尋便宜 32%</p>
+<span style="font-size:12px; color:var(--ftext); font-weight:600;">查看方案 →</span>
+</div>
+
+<div data-home="quick">
+<p class="sub">最便宜 3 班</p>
+<div class="card" onclick="goDetail()">
+<div style="display:flex; justify-content:space-between;"><span class="val">中華航空 CI102</span><span class="val" style="color:var(--strong);">$8,450</span></div>
+<span class="sub">08:20 → 12:05・直飛・含行李</span>
+</div>
+<button class="cta secondary" onclick="goFields('quick')">調整搜尋條件</button>
+</div>
+
+<div data-home="outbound" class="hide">
+<p class="sub">外站票最便宜組合</p>
+<div class="card" onclick="goResults('outbound')">
+<div style="display:flex; justify-content:space-between;"><span class="val">組合一・省 28%</span><span class="smallbadge" style="background:var(--warnfill); color:var(--warntext);">容忍度高</span></div>
+<span class="sub">高雄→台北→大阪→台北→高雄・總價 $11,200</span>
+</div>
+<button class="cta secondary" onclick="goFields('outbound')">調整搜尋條件</button>
+</div>
+
+<div data-home="reverse" class="hide">
+<p class="sub">反向購票最便宜組合</p>
+<div class="card" onclick="goResults('reverse')">
+<div style="display:flex; justify-content:space-between;"><span class="val">組合一・省 35%</span><span class="smallbadge" style="background:var(--warnfill); color:var(--warntext);">有風險</span></div>
+<span class="sub">台北→大阪 正向票＋反向回程・總價 $9,800</span>
+</div>
+<button class="cta secondary" onclick="goFields('reverse')">調整搜尋條件</button>
+</div>
+
+</div>
+
+<div class="screen" id="screen-fields">
+<div class="backbar" onclick="goHome()">&#8592; 首頁</div>
+<div class="logo">flight<span>find</span><i></i></div>
+
+<div data-fields="quick">
+<h2>快速搜尋</h2>
+<div class="row"><div class="field"><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="swap">&#8645;</div>
+<div class="row"><div class="field"><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div class="field"><span class="label">出發日／返程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div class="field"><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<span class="note">已帶入出發前詢問頁的城市/日期/人數</span>
+<button class="cta" onclick="goResults('quick')">搜尋航班</button>
+</div>
+
+<div data-fields="outbound" class="hide">
+<h2>外站票 &#9432;</h2>
+<div class="row"><div class="field"><span class="label">外站出發地</span><span class="val">高雄 KHH</span></div></div>
+<div class="row"><div class="field"><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="row"><div class="field"><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div class="field"><span class="label">出發日／返程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div class="field"><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<button class="cta" onclick="goResults('outbound')">搜尋組合</button>
+</div>
+
+<div data-fields="reverse" class="hide">
+<h2>反向購票 &#9432;</h2>
+<div class="row"><div class="field"><span class="label">出發地</span><span class="val">台北 TPE</span></div></div>
+<div class="swap">&#8645;</div>
+<div class="row"><div class="field"><span class="label">目的地</span><span class="val">大阪 KIX</span></div></div>
+<div class="row"><div class="field"><span class="label">去程日／回程日</span><span class="val">10/12 － 10/16</span></div></div>
+<div class="row"><div class="field"><span class="label">人數／艙等</span><span class="val">2 位・經濟艙</span></div></div>
+<span class="note">&#9888; 回程為反向票，需了解風險後才能訂票</span>
+<button class="cta" onclick="goResults('reverse')">搜尋組合</button>
+</div>
+
+</div>
+
+<div class="screen" id="screen-results">
+<div class="backbar" onclick="goFieldsBack()">&#8592; 返回</div>
+<div class="logo">flight<span>find</span><i></i></div>
+
+<div data-results="quick">
+<div class="tabs">
+<button class="on">最便宜3班</button><button>時間最佳</button><button>廉價vs傳統</button><button>鄰近日期</button>
+</div>
+<div class="chips"><span class="chip on">直飛</span><span class="chip">中華航空</span><span class="chip">長榮航空</span><span class="chip">價格低到高</span></div>
+<div class="card" onclick="goDetail()"><div style="display:flex; justify-content:space-between;"><span class="val">中華航空 CI102</span><span class="val" style="color:var(--strong);">$8,450</span></div><span class="sub">08:20 → 12:05・直飛・含行李</span></div>
+<div class="card" onclick="goDetail()"><div style="display:flex; justify-content:space-between;"><span class="val">長榮航空 BR118</span><span class="val" style="color:var(--strong);">$9,120</span></div><span class="sub">10:05 → 13:50・直飛・含行李</span></div>
+<div class="card" onclick="goDetail()"><div style="display:flex; justify-content:space-between;"><span class="val">星宇航空 JX822</span><span class="val" style="color:var(--strong);">$9,480</span></div><span class="sub">14:40 → 18:25・直飛・含行李</span></div>
+</div>
+
+<div data-results="outbound" class="hide">
+<h2>外站票組合</h2>
+<div class="card" onclick="goDetail()">
+<div style="display:flex; justify-content:space-between; align-items:center;"><span class="val">組合一・省 28%</span><span class="smallbadge" style="background:var(--warnfill); color:var(--warntext);">容忍度高</span></div>
+<span class="sub">① 高雄→台北（接駁）</span>
+<span class="sub">② 台北→大阪（去程）</span>
+<span class="sub">③ 大阪→台北（回程）</span>
+<span class="sub">④ 台北→高雄（接駁）</span>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:0.5px solid var(--border); padding-top:6px;"><span class="val">總價 $11,200</span><span class="smallbadge" style="background:var(--fill); color:var(--ftext);">順道玩：西門町</span></div>
+</div>
+<div class="card" onclick="goDetail()"><div style="display:flex; justify-content:space-between; align-items:center;"><span class="val">組合二・省 21%</span><span class="smallbadge" style="background:var(--bg3); color:var(--text2);">容忍度中</span></div><span class="sub">總價 $12,050・4 段航程</span></div>
+</div>
+
+<div data-results="reverse" class="hide">
+<h2>反向購票組合</h2>
+<div class="card" style="border-color:var(--warnfill);" onclick="goDetail()">
+<div style="display:flex; justify-content:space-between; align-items:center;"><span class="val">組合一・省 35%</span><span class="smallbadge" style="background:var(--warnfill); color:var(--warntext);">有風險</span></div>
+<span class="sub">去程：台北 → 大阪（正向票）</span>
+<span class="sub">回程：買「大阪→台北」實際只搭「台北→大阪」段</span>
+<div style="display:flex; justify-content:space-between; align-items:center; border-top:0.5px solid var(--border); padding-top:6px;"><span class="val">總價 $9,800</span><span class="sub">點進去看完整風險說明</span></div>
+</div>
+<div class="card" style="border-color:var(--warnfill);" onclick="goDetail()"><div style="display:flex; justify-content:space-between; align-items:center;"><span class="val">組合二・省 30%</span><span class="smallbadge" style="background:var(--warnfill); color:var(--warntext);">有風險</span></div><span class="sub">總價 $10,500</span></div>
+</div>
+
+</div>
+
+<div class="screen" id="screen-detail">
+<div class="backbar" onclick="goBackToResults()">&#8592; 返回結果</div>
+<div class="logo">flight<span>find</span><i></i></div>
+<h2>航班詳情・中華航空 CI102</h2>
+<div class="row"><span class="ic">&#128337;</span><div class="field"><span class="label">航段時間</span><span class="val">08:20 TPE → 12:05 KIX・直飛 3h45m</span></div></div>
+<div class="row"><span class="ic">&#9992;</span><div class="field"><span class="label">艙等／機型</span><span class="val">經濟艙・A321neo</span></div></div>
+<div class="row"><span class="ic">&#128179;</span><div class="field"><span class="label">費用明細</span><span class="val">票價 $7,600＋行李 $850</span></div></div>
+<div class="row"><span class="ic">&#127894;</span><div class="field"><span class="label">里程累積</span><span class="val">約 850 哩</span></div></div>
+<div class="row"><span class="ic">&#128260;</span><div class="field"><span class="label">退票／改票</span><span class="val">可改票，酌收 $500；退票需扣 30%</span></div></div>
+<div id="detail-risk" class="hide">
+<span class="note">&#9888; 放棄去程段可能導致整張票失效，請務必確認航空公司退票條款後再訂票</span>
+<label style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text2);"><input type="checkbox" id="risk-ack" onchange="toggleBookBtn()"> 我已了解上述風險</label>
+</div>
+<button class="cta" id="book-btn" onclick="alert('原型階段：實際會導去官網／比價平台較便宜的一方')">前往訂票</button>
+</div>
+
+<div class="screen" id="screen-my">
+<div class="logo">flight<span>find</span><i></i></div>
+<div style="display:flex; align-items:center; gap:12px;">
+<div class="avatar">HY</div>
+<div><p style="font-weight:600;">HenryYu</p><p class="sub">已登入</p></div>
+</div>
+<div class="row"><span class="ic">&#10084;</span><div class="field"><span class="label">收藏航班／搜尋紀錄</span><span class="val">3 筆收藏</span></div></div>
+<div class="row"><span class="ic">&#128276;</span><div class="field"><span class="label">價格追蹤</span><span class="val">台北→大阪・邀請旅伴中</span></div></div>
+<div class="row"><span class="ic">&#128172;</span><div class="field"><span class="label">航空公司容忍度回報</span><span class="val">回報你的使用經驗</span></div></div>
+<div class="row"><span class="ic">&#9881;</span><div class="field"><span class="label">設定</span><span class="val">深色模式・通知・帳號</span></div></div>
+</div>
+
+</div>
+
+<div class="navbar" id="navbar">
+<button id="nav-home" onclick="goHome()">&#127968;<span>首頁</span></button>
+<button id="nav-results" onclick="goResults()">&#128202;<span>結果</span></button>
+<button id="nav-my" onclick="goMy()">&#128100;<span>我的</span></button>
+</div>
+
+</div>
+
+<script>
+var currentMode = 'quick';
+var lastNonDetailScreen = 'screen-home';
+
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(function(s){ s.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  var nb = document.getElementById('navbar');
+  if(id === 'screen-intake'){ nb.classList.add('hide'); } else { nb.classList.remove('hide'); }
+  ['nav-home','nav-results','nav-my'].forEach(function(n){ document.getElementById(n).classList.remove('on'); });
+  if(id === 'screen-home') document.getElementById('nav-home').classList.add('on');
+  if(id === 'screen-results') document.getElementById('nav-results').classList.add('on');
+  if(id === 'screen-my') document.getElementById('nav-my').classList.add('on');
+  if(id !== 'screen-detail') lastNonDetailScreen = id;
+}
+
+function setMode(mode){
+  currentMode = mode;
+  ['quick','outbound','reverse'].forEach(function(m){
+    var homeTab = document.getElementById('hometab-' + m);
+    if(homeTab) homeTab.classList.toggle('on', m === mode);
+    var homePanel = document.querySelector('[data-home="' + m + '"]');
+    if(homePanel) homePanel.classList.toggle('hide', m !== mode);
+    var fieldsPanel = document.querySelector('[data-fields="' + m + '"]');
+    if(fieldsPanel) fieldsPanel.classList.toggle('hide', m !== mode);
+    var resultsPanel = document.querySelector('[data-results="' + m + '"]');
+    if(resultsPanel) resultsPanel.classList.toggle('hide', m !== mode);
+  });
+}
+
+function goHome(){ showScreen('screen-home'); }
+function goFields(mode){ if(mode) setMode(mode); showScreen('screen-fields'); }
+function goFieldsBack(){ showScreen('screen-fields'); }
+function goResults(mode){ if(mode) setMode(mode); showScreen('screen-results'); }
+function goBackToResults(){ showScreen('screen-results'); }
+function goMy(){ showScreen('screen-my'); }
+
+function goDetail(){
+  var risk = document.getElementById('detail-risk');
+  var bookBtn = document.getElementById('book-btn');
+  if(currentMode === 'reverse'){
+    risk.classList.remove('hide');
+    document.getElementById('risk-ack').checked = false;
+    bookBtn.setAttribute('disabled','disabled');
+    bookBtn.style.opacity = '0.5';
+  } else {
+    risk.classList.add('hide');
+    bookBtn.removeAttribute('disabled');
+    bookBtn.style.opacity = '1';
+  }
+  showScreen('screen-detail');
+}
+
+function toggleBookBtn(){
+  var checked = document.getElementById('risk-ack').checked;
+  var bookBtn = document.getElementById('book-btn');
+  if(checked){ bookBtn.removeAttribute('disabled'); bookBtn.style.opacity = '1'; }
+  else { bookBtn.setAttribute('disabled','disabled'); bookBtn.style.opacity = '0.5'; }
+}
+</script>
+</body>
+</html>
