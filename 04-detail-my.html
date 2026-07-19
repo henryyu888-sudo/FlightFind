@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>FlightFind - 詳情頁 / 我的頁面</title>
+<style>
+:root{
+  --bg:#FFFFFF; --bg2:#F4F3EF; --bg3:#EDEBE4;
+  --text:#1A1A1A; --text2:#6B6B66; --border:rgba(0,0,0,0.12);
+  --fill:#F5C4B3; --ftext:#712B13; --strong:#D85A30; --cta-text:#FAECE7;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#1C1C1A; --bg2:#2A2A27; --bg3:#38372F;
+    --text:#F5F4EF; --text2:#B4B2A9; --border:rgba(255,255,255,0.15);
+    --fill:#993C1D; --ftext:#F5C4B3; --strong:#F0997B; --cta-text:#4A1B0C;
+  }
+}
+body{font-family:"SF Pro","PingFang TC",-apple-system,sans-serif;background:var(--bg2);margin:0;padding:24px;}
+.wrap{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+.phone{width:250px;border-radius:30px;background:var(--bg3);border:0.5px solid var(--border);padding:9px;}
+.screen{background:var(--bg);border-radius:22px;padding:15px 14px;min-height:540px;display:flex;flex-direction:column;gap:11px;}
+.logo{font-size:12px;font-weight:500;color:var(--text);display:flex;align-items:center;gap:3px;}
+.logo span{color:var(--strong);}
+.logo i{width:9px;height:9px;background:#EF9F27;border-radius:3px;display:inline-block;transform:rotate(20deg);}
+.row{display:flex;align-items:center;gap:10px;border:0.5px solid var(--border);border-radius:8px;padding:10px 11px;}
+.row div{display:flex;flex-direction:column;gap:2px;flex:1;}
+.label{font-size:10px;color:var(--text2);}
+.val{font-size:12px;font-weight:500;color:var(--text);}
+.cta{background:var(--strong);color:var(--cta-text);text-align:center;font-size:13px;font-weight:500;padding:12px;border-radius:8px;margin-top:auto;}
+.avatar{width:38px;height:38px;border-radius:50%;background:var(--fill);color:var(--ftext);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:13px;}
+p{margin:0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<p style="font-size:14px;font-weight:500;color:var(--text);">航班詳情・中華航空 CI102</p>
+<div class="row"><div><span class="label">航段時間</span><span class="val">08:20 TPE → 12:05 KIX・直飛 3h45m</span></div></div>
+<div class="row"><div><span class="label">艙等／機型</span><span class="val">經濟艙・A321neo</span></div></div>
+<div class="row"><div><span class="label">費用明細</span><span class="val">票價 $7,600＋行李 $850</span></div></div>
+<div class="row"><div><span class="label">里程累積</span><span class="val">約 850 哩</span></div></div>
+<div class="row"><div><span class="label">退票／改票</span><span class="val">可改票，酌收 $500；退票需扣 30%</span></div></div>
+<div class="cta">前往訂票（導去官網比價後較便宜方）</div>
+</div></div>
+
+<div class="phone"><div class="screen">
+<div class="logo">flight<span>find</span><i></i></div>
+<div style="display:flex;align-items:center;gap:10px;">
+<div class="avatar">HY</div>
+<div><p style="font-size:13px;font-weight:500;color:var(--text);">HenryYu</p><p style="font-size:10px;color:var(--text2);">已登入</p></div>
+</div>
+<div class="row"><div><span class="label">收藏航班／搜尋紀錄</span><span class="val">3 筆收藏</span></div></div>
+<div class="row"><div><span class="label">價格追蹤</span><span class="val">台北→大阪・邀請旅伴中</span></div></div>
+<div class="row"><div><span class="label">航空公司容忍度回報</span><span class="val">回報你的使用經驗</span></div></div>
+<div class="row"><div><span class="label">設定</span><span class="val">深色模式・通知・帳號</span></div></div>
+</div></div>
+
+</div>
+</body>
+</html>
