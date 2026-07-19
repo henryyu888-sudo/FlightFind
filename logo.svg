@@ -1,0 +1,9 @@
+<svg viewBox="0 0 360 140" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>FlightFind logo</title>
+<desc>Lowercase flight in dark text, find in orange, with a yellow price-tag icon touching the final d</desc>
+<text id="ff-text" x="30" y="85" font-family="sans-serif" font-size="46" font-weight="500" fill="#1A1A1A">flight<tspan fill="#D85A30">find</tspan></text>
+<g transform="translate(288,52) rotate(20)">
+<rect x="0" y="0" width="26" height="26" rx="5" fill="#EF9F27"></rect>
+<circle cx="7.5" cy="7.5" r="3" fill="#412402"></circle>
+</g>
+</svg>
